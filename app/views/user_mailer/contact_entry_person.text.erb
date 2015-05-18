@@ -1,0 +1,13 @@
+Hi!
+
+Someone posted you a message through AlRide:
+
+<%= @text %>
+
+
+--------------------------
+
+Please, if your entry should be removed from our database, click on the following link.
+
+<%= entry_remove_url(@entry, secret: @entry.secret) %>
+

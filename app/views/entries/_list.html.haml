@@ -5,12 +5,14 @@
       %th= model_class.human_attribute_name(:date)
       %th= model_class.human_attribute_name(:from)
       %th= model_class.human_attribute_name(:to)
+      %th= model_class.human_attribute_name(:seats)
       %th
   %tbody
     - entries.each do |entry|
       %tr
-        %td= entry.date
+        %td= entry.date.to_formatted_s(:long)
         %td= entry.from
         %td= entry.to
+        %td= entry.seats
         %td
           = link_to t('.show_details'), entry_path(entry), :class => 'btn btn-mini'

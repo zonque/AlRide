@@ -8,10 +8,16 @@ class Entry < ActiveRecord::Base
   validates_presence_of :to
 
   before_save :create_secret
+  after_save :send_mail
 
   private
 
   def create_secret
-    self.secret = SecureRandom.hex
+    self.secret = SecureRandom.uuid
   end
+
+  def send_mail
+    UserMailer.entry_created(self).deliver
+  end
+
 end

@@ -1,0 +1,12 @@
+Your <%= @entry.entry_type %> has been stored with the following details:
+
+  From: <%= @entry.from %>
+  To:   <%= @entry.to %>
+  Date: <%= @entry.date %>
+  Number of seats: <%= @entry.seats %>
+  Notes: <%= @entry.notes %>
+
+Please, if your entry should be removed from our database, click on the following link.
+
+<%= entry_remove_url(@entry, secret: @entry.secret) %>
+

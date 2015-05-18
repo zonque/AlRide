@@ -3,6 +3,7 @@ AlRide::Application.routes.draw do
 
   resources :entries do
     post 'send_email'
+    get 'remove'
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

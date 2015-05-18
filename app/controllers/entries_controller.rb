@@ -1,5 +1,5 @@
 class EntriesController < ApplicationController
-  before_action :set_entry, only: [:show, :edit, :update, :destroy]
+  before_action :set_entry, only: [:show]
 
   # GET /entries/1
   # GET /entries/1.json
@@ -32,17 +32,26 @@ class EntriesController < ApplicationController
     end
   end
 
-  # DELETE /entries/1
-  # DELETE /entries/1.json
-  def destroy
-    @entry.destroy
-    respond_to do |format|
-      format.html { redirect_to entries_url }
-      format.json { head :no_content }
+  def remove
+    @entry = Entry.find_by_id(params[:entry_id])
+
+    if @entry.nil?
+      redirect_to root_path, flash: { error: 'Entry does not exist' }
+      return
     end
+
+    if @entry.secret != params[:secret]
+      redirect_to root_path, flash: { error: 'Invalid removal link' }
+      return
+    end
+
+    @entry.destroy
+    redirect_to root_path, flash: { success: 'Entry was removed, thanks!' }
   end
 
   def send_email
+    @entry = Entry.find(params[:entry_id])
+    UserMailer.contact_entry_person(@entry, params[:from], params[:text]).deliver
     redirect_to root_path, flash: { success: 'Your mail has been sent' }
   end
 
