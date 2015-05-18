@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  entry_type: MyString
+  name: MyString
+  email: MyString
+  phone: MyString
+  date: 2015-05-18 19:19:49
+  from: MyString
+  to: MyString
+  seats: 1
+  notes: MyText
+  secret: MyString
+
+two:
+  entry_type: MyString
+  name: MyString
+  email: MyString
+  phone: MyString
+  date: 2015-05-18 19:19:49
+  from: MyString
+  to: MyString
+  seats: 1
+  notes: MyText
+  secret: MyString

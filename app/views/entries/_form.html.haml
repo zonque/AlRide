@@ -1,0 +1,44 @@
+= form_for @entry, :html => { :class => 'form-horizontal' } do |f|
+  .control-group
+    = f.label :entry_type, :class => 'control-label'
+    .controls
+      = f.text_field :entry_type, :class => 'text_field'
+  .control-group
+    = f.label :name, :class => 'control-label'
+    .controls
+      = f.text_field :name, :class => 'text_field'
+  .control-group
+    = f.label :email, :class => 'control-label'
+    .controls
+      = f.text_field :email, :class => 'text_field'
+  .control-group
+    = f.label :phone, :class => 'control-label'
+    .controls
+      = f.text_field :phone, :class => 'text_field'
+  .control-group
+    = f.label :date, :class => 'control-label'
+    .controls
+      = f.text_field :date, :class => 'text_field'
+  .control-group
+    = f.label :from, :class => 'control-label'
+    .controls
+      = f.text_field :from, :class => 'text_field'
+  .control-group
+    = f.label :to, :class => 'control-label'
+    .controls
+      = f.text_field :to, :class => 'text_field'
+  .control-group
+    = f.label :seats, :class => 'control-label'
+    .controls
+      = f.text_field :seats, :class => 'text_field'
+  .control-group
+    = f.label :notes, :class => 'control-label'
+    .controls
+      = f.text_field :notes, :class => 'text_field'
+  .control-group
+    = f.label :secret, :class => 'control-label'
+    .controls
+      = f.text_field :secret, :class => 'text_field'
+  .form-actions
+    = f.submit nil, :class => 'btn btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), entries_path, :class => 'btn'

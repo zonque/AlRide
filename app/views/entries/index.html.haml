@@ -1,0 +1,39 @@
+- model_class = Entry
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:entry_type)
+      %th= model_class.human_attribute_name(:name)
+      %th= model_class.human_attribute_name(:email)
+      %th= model_class.human_attribute_name(:phone)
+      %th= model_class.human_attribute_name(:date)
+      %th= model_class.human_attribute_name(:from)
+      %th= model_class.human_attribute_name(:to)
+      %th= model_class.human_attribute_name(:seats)
+      %th= model_class.human_attribute_name(:notes)
+      %th= model_class.human_attribute_name(:secret)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @entries.each do |entry|
+      %tr
+        %td= link_to entry.id, entry_path(entry)
+        %td= entry.entry_type
+        %td= entry.name
+        %td= entry.email
+        %td= entry.phone
+        %td= entry.date
+        %td= entry.from
+        %td= entry.to
+        %td= entry.seats
+        %td= entry.notes
+        %td= entry.secret
+        %td=l entry.created_at
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_entry_path(entry), :class => 'btn btn-mini'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), entry_path(entry), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
+
+= link_to t('.new', :default => t("helpers.links.new")), new_entry_path, :class => 'btn btn-primary'
