@@ -1,5 +1,9 @@
 AlRide::Application.routes.draw do
-  resources :entries
+  root :to => 'welcome#index'
+
+  resources :entries do
+    post 'send_email'
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

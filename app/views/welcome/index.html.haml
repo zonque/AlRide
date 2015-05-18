@@ -1,0 +1,18 @@
+- model_class = Entry
+.page-header
+  %h1=t '.title'
+
+.row
+  .col-xs-6.col-centered
+    =link_to t('.edit', :default => t("i_have_a_ride_to_share")), new_entry_path(:entry_type => :offer), :class => 'btn btn-large btn-success'
+    =link_to t('.edit', :default => t("i_need_a_ride")), new_entry_path(:entry_type => :request), :class => 'btn btn-large btn-warning'
+
+%hr
+.row
+  %h2=t '.offers'
+  =render 'entries/list', :entries => @offers
+
+%hr
+.row
+  %h2=t '.requests'
+  =render 'entries/list', :entries => @requests

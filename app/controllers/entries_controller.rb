@@ -1,51 +1,32 @@
 class EntriesController < ApplicationController
   before_action :set_entry, only: [:show, :edit, :update, :destroy]
 
-  # GET /entries
-  # GET /entries.json
-  def index
-    @entries = Entry.all
-  end
-
   # GET /entries/1
   # GET /entries/1.json
   def show
+    @title = "Details for #{@entry.entry_type} from #{@entry.name}"
   end
 
   # GET /entries/new
   def new
     @entry = Entry.new
-  end
-
-  # GET /entries/1/edit
-  def edit
+    @entry.entry_type = params[:entry_type]
+    @entry.seats = 1
+    @title = "New #{@entry.entry_type}"
   end
 
   # POST /entries
   # POST /entries.json
   def create
     @entry = Entry.new(entry_params)
+    @title = "New #{@entry.entry_type}"
 
     respond_to do |format|
       if @entry.save
-        format.html { redirect_to @entry, notice: 'Entry was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Entry was successfully created.' }
         format.json { render action: 'show', status: :created, location: @entry }
       else
         format.html { render action: 'new' }
-        format.json { render json: @entry.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /entries/1
-  # PATCH/PUT /entries/1.json
-  def update
-    respond_to do |format|
-      if @entry.update(entry_params)
-        format.html { redirect_to @entry, notice: 'Entry was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
         format.json { render json: @entry.errors, status: :unprocessable_entity }
       end
     end
@@ -61,6 +42,10 @@ class EntriesController < ApplicationController
     end
   end
 
+  def send_email
+    redirect_to root_path, flash: { success: 'Your mail has been sent' }
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_entry
@@ -69,6 +54,7 @@ class EntriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def entry_params
-      params.require(:entry).permit(:entry_type, :name, :email, :phone, :date, :from, :to, :seats, :notes, :secret)
+      params.require(:entry).permit(:entry_type, :name, :email, :phone, :date, :from, :to, :seats, :notes)
     end
+
 end
