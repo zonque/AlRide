@@ -10,9 +10,9 @@
 %div{:role => "tabpanel"}
   %ul{:class => "nav nav-tabs", :role => "tablist"}
     %li{:role => "presentation", :class => "active"}
-      = link_to "People who have a ride to share", "#offers", :'aria-controls' => 'offers', :role => 'tab', :'data-toggle' => 'tab'
+      = link_to "People who have a ride to share (#{@offers.count})", "#offers", :'aria-controls' => 'offers', :role => 'tab', :'data-toggle' => 'tab'
     %li{:role => "presentation"}
-      = link_to "People who need a ride", "#requests", :'aria-controls' => 'requests', :role => 'tab', :'data-toggle' => 'tab'
+      = link_to "People who need a ride (#{@requests.count})", "#requests", :'aria-controls' => 'requests', :role => 'tab', :'data-toggle' => 'tab'
   %div{:class => "tab-content"}
     %div{:role => "tabpanel", :class => "tab-pane active", :id => "offers"}
       =render 'entries/list', :entries => @offers
