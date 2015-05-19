@@ -2,10 +2,10 @@
 %table.table.table-striped
   %thead
     %tr
-      %th= model_class.human_attribute_name(:date)
-      %th= model_class.human_attribute_name(:from)
-      %th= model_class.human_attribute_name(:to)
-      %th= model_class.human_attribute_name(:seats)
+      %th= t('date')
+      %th= t('from')
+      %th= t('to')
+      %th= t('seats')
       %th
   %tbody
     - entries.each do |entry|
