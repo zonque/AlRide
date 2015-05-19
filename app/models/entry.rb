@@ -14,7 +14,9 @@ class Entry < ActiveRecord::Base
   validate :date_after_now
 
   def date_after_now
-    self.errors.add(:date, "should not be in the past") if self.date < Time.now
+    if self.date
+      self.errors.add(:date, "should not be in the past") if self.date < Time.now
+    end
   end
 
   before_save :create_secret
