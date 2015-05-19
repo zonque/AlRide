@@ -13,5 +13,18 @@
     <%= yield %>
   </div>
 
+  <div id="footer">
+    <hr />
+    <div class="container text-center">
+      <% if I18n.locale == :de %>
+        <%= link_to "English version", url_for(locale: :en) %>
+      <% end %>
+
+      <% if I18n.locale == :en %>
+        <%= link_to "Deutsche Version", url_for(locale: :de) %>
+      <% end %>
+    </div>
+  </div>
+
 </body>
 </html>
