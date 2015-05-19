@@ -1,0 +1,12 @@
+Hallo <%= @entry.name %>,
+
+<%= @from %> hat dir über <%= Settings.platform_name %> eine Nachricht geschickt:
+
+<%= @text %>
+
+--------------------------
+
+Wenn dein Eintrag nicht mehr aktuell ist und entfernt werden sollte, klicke bitte auf den folgenden Link.
+
+<%= entry_remove_url(@entry, secret: @entry.secret) %>
+

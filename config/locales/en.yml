@@ -1,23 +1,45 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  welcome_to: "Welcome to"
+  have_a_ride: "I have a ride to share!"
+  need_a_ride: "I need a ride!"
+  people_who_have_a_ride: "People who have a ride to share"
+  people_who_need_a_ride: "People who need a ride"
+  show_details: "Show details"
+  cancel: "Cancel"
+  back: "Back"
+  create_entry: "Create entry"
+  send_email: "Send email"
+
+  your_name: "Your name"
+  your_email: "Your email"
+  your_email_address: "your@email-address.org"
+  your_phone_number: "Your phone number"
+  date_and_time: "Date and time"
+  your_start_point: "Your start point"
+  your_destination: "Your destination"
+  to_contact_text: "To contact %{name}, please enter your mail address and your text below."
+  please_complete_the_form: "Please complete the form below. Your email address will not be visible by anyone. A phone number is optional and will be shown to others."
+  your_message: "Your message"
+
+  your_entry_has_been_created: "Your %{type} has been created"
+  someone_contacted_you: "someone contacted you"
+
+  name_is_looking_for_a_ride: "%{name} is looking for a ride"
+  name_has_a_ride_to_share: "%{name} has a ride to share"
+
+  entry_was_successfully_created: "Entry was successfully created."
+  entry_does_not_exist: "Entry does not exist"
+  entry_was_removed: "Entry was removed, thanks!"
+  invalid_removal_link: "Invalid removal link"
+  mail_has_been_sent: "Your mail has been sent."
+
+  name: "Name"
+  phone: "Phone"
+  date: "Date"
+  from: "From"
+  to: "To"
+  seats: "Number of seats"
+  notes: "Notes"
+
+  offer: "offer"
+  request: "request"

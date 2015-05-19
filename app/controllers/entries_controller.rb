@@ -5,9 +5,9 @@ class EntriesController < ApplicationController
   # GET /entries/1.json
   def show
     if @entry.entry_type.to_sym == :request
-      @title = "#{@entry.name} is looking for a ride"
+      @title = t('name_is_looking_for_a_ride', name: @entry.name)
     else
-      @title = "#{@entry.name} has a ride to share"
+      @title = t('name_has_a_ride_to_share', name: @entry.name)
     end
   end
 
@@ -27,7 +27,7 @@ class EntriesController < ApplicationController
 
     respond_to do |format|
       if @entry.save
-        format.html { redirect_to root_path, notice: 'Entry was successfully created.' }
+        format.html { redirect_to root_path, notice: t('entry_was_successfully_created') }
         format.json { render action: 'show', status: :created, location: @entry }
       else
         format.html { render action: 'new' }
@@ -40,23 +40,23 @@ class EntriesController < ApplicationController
     @entry = Entry.find_by_id(params[:entry_id])
 
     if @entry.nil?
-      redirect_to root_path, flash: { error: 'Entry does not exist' }
+      redirect_to root_path, flash: { error: t('entry_does_not_exist') }
       return
     end
 
     if @entry.secret != params[:secret]
-      redirect_to root_path, flash: { error: 'Invalid removal link' }
+      redirect_to root_path, flash: { error: t('invalid_removal_link') }
       return
     end
 
     @entry.destroy
-    redirect_to root_path, flash: { success: 'Entry was removed, thanks!' }
+    redirect_to root_path, flash: { success: t('entry_was_removed') }
   end
 
   def send_email
     @entry = Entry.find(params[:entry_id])
     UserMailer.contact_entry_person(@entry, params[:from], params[:text]).deliver
-    redirect_to root_path, flash: { success: 'Your mail has been sent' }
+    redirect_to root_path, flash: { success: t('mail_has_been_sent') }
   end
 
   private

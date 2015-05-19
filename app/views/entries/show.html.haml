@@ -5,42 +5,42 @@
 %table.table
   %tbody
     %tr
-      %td= model_class.human_attribute_name(:name) + ':'
+      %td= t('name') + ':'
       %td= @entry.name
     %tr
-      %td= model_class.human_attribute_name(:phone) + ':'
+      %td= t('phone') + ':'
       %td= @entry.phone
     %tr
-      %td= model_class.human_attribute_name(:date) + ':'
+      %td= t('date') + ':'
       %td= @entry.date.to_formatted_s(:long)
     %tr
-      %td= model_class.human_attribute_name(:from) + ':'
+      %td= t('from') + ':'
       %td= @entry.from
     %tr
-      %td= model_class.human_attribute_name(:to) + ':'
+      %td= t('to') + ':'
       %td= @entry.to
     %tr
-      %td= model_class.human_attribute_name(:seats) + ':'
+      %td= t('seats') + ':'
       %td= @entry.seats
     %tr
-      %td= model_class.human_attribute_name(:notes) + ':'
+      %td= t('notes') + ':'
       %td= @entry.notes
 
 .form-actions
-  = link_to t('.back', :default => t("helpers.links.back")), root_path, :class => 'btn'
+  = link_to t('back'), root_path, :class => 'btn'
 
 %h2=t '.contact'
 
 = form_tag entry_send_email_path(@entry), :html => { :class => 'form-horizontal' } do
-  %p To contact #{@entry.name}, please enter your mail address and your text below.
+  %p=t('to_contact_text', name: @entry.name)
   %hr
   .control-group
-    = label_tag "Your email address", nil, :class => 'input-xlarge'
+    = label_tag t('your_email'), nil, :class => 'input-xlarge'
     .controls
-      = text_field_tag :from, nil, :class => 'text_field', :placeholder => "your@email-address.org"
+      = text_field_tag :from, nil, :class => 'text_field', :placeholder => t("your_email_address")
   .control-group
-    = label_tag "Your text", nil, :class => 'input-xlarge'
+    = label_tag t('your_message'), nil, :class => 'input-xlarge'
     .controls
       = text_area_tag :text, nil, :size => "100x20", :class => 'text_field input-xlarge'
   .form-actions
-    = submit_tag 'Send email', :class => 'btn btn-primary'
+    = submit_tag t('send_email'), :class => 'btn btn-primary'

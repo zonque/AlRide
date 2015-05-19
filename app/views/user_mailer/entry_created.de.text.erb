@@ -1,0 +1,27 @@
+Hi <%= @entry.name %>,
+
+<% if @entry.entry_type.to_sym == :request %>
+Vielen Dank für das Einstellen deines Gesuchs!
+<% else %>
+Vielen Dank, dass du eine MFG anbietest!
+<% end %>
+
+Dein <%= t(@entry.entry_type) %> wurde mit den folgenden Details gespeichert:
+
+  Von:   <%= @entry.from %>
+  Nach:  <%= @entry.to %>
+  Datum: <%= @entry.date %>
+  Anzahl an Sitzplätzen: <%= @entry.seats %>
+  Sonstiges: <%= @entry.notes %>
+
+
+<% if @entry.entry_type.to_sym == :request %>
+Leute, die eine MFG anbieten, können dich jetzt über unsere Webseite kontaktieren.
+<% else %>
+Leute, die eine MFG suchen, können dich jetzt über unsere Webseite kontaktieren.
+<% end %>
+
+Wenn dein Eintrag nicht mehr aktuell ist und entfernt werden sollte, klicke bitte auf den folgenden Link.
+
+<%= entry_remove_url(@entry, secret: @entry.secret) %>
+

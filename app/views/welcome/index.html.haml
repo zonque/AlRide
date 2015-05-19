@@ -1,18 +1,18 @@
 - model_class = Entry
 .page-header
-  %h1= "Welcome to #{Settings.platform_name}!"
+  %h1= t('welcome_to') + " #{Settings.platform_name}!"
 
 .row
   .span12.fat-buttons
-    =link_to "I have a ride to share!", new_entry_path(:entry_type => :offer), :class => 'btn btn-large btn-success'
-    =link_to "I need a ride!", new_entry_path(:entry_type => :request), :class => 'btn btn-large btn-warning'
+    =link_to t('have_a_ride'), new_entry_path(:entry_type => :offer), :class => 'btn btn-large btn-success'
+    =link_to t('need_a_ride'), new_entry_path(:entry_type => :request), :class => 'btn btn-large btn-warning'
 
 %div{:role => "tabpanel"}
   %ul{:class => "nav nav-tabs", :role => "tablist"}
     %li{:role => "presentation", :class => "active"}
-      = link_to "People who have a ride to share (#{@offers.count})", "#offers", :'aria-controls' => 'offers', :role => 'tab', :'data-toggle' => 'tab'
+      = link_to t('people_who_have_a_ride') + " (#{@offers.count})", "#offers", :'aria-controls' => 'offers', :role => 'tab', :'data-toggle' => 'tab'
     %li{:role => "presentation"}
-      = link_to "People who need a ride (#{@requests.count})", "#requests", :'aria-controls' => 'requests', :role => 'tab', :'data-toggle' => 'tab'
+      = link_to t('people_who_need_a_ride') + " (#{@requests.count})", "#requests", :'aria-controls' => 'requests', :role => 'tab', :'data-toggle' => 'tab'
   %div{:class => "tab-content"}
     %div{:role => "tabpanel", :class => "tab-pane active", :id => "offers"}
       =render 'entries/list', :entries => @offers
