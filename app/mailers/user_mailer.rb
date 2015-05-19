@@ -9,7 +9,8 @@ class UserMailer < ActionMailer::Base
   def contact_entry_person(entry, from, text)
     @entry = entry
     @text = text
-    mail to: @entry.email, from: from, subject: "#{Settings['platform_name']}: someone sent you a message"
+    @from = from
+    mail to: @entry.email, reply_to: from, subject: "#{Settings.platform_name}: someone contacted you"
   end
 
 end
