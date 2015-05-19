@@ -12,7 +12,7 @@
       %td= @entry.phone
     %tr
       %td= model_class.human_attribute_name(:date) + ':'
-      %td= @entry.date
+      %td= @entry.date.to_formatted_s(:long)
     %tr
       %td= model_class.human_attribute_name(:from) + ':'
       %td= @entry.from

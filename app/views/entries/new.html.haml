@@ -1,4 +1,6 @@
 - model_class = Entry
 .page-header
-  %h1=t @title
+  %h1= @title
+  %p= @text
+  %p Please complete the form below. Your email address will not be visible by anyone. A phone number is optional and will be shown to others.
 = render :partial => "form"

@@ -4,7 +4,11 @@ class EntriesController < ApplicationController
   # GET /entries/1
   # GET /entries/1.json
   def show
-    @title = "Details for #{@entry.entry_type} from #{@entry.name}"
+    if @entry.entry_type.to_sym == :request
+      @title = "#{@entry.name} is looking for a ride"
+    else
+      @title = "#{@entry.name} has a ride to share"
+    end
   end
 
   # GET /entries/new

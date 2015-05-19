@@ -1,3 +1,11 @@
+Hi <%= @entry.name %>,
+
+<% if @entry.entry_type.to_sym == :request %>
+Thanks for letting us know you are looking for a ride!
+<% else %>
+Thanks for sharing your ride!
+<% end %>
+
 Your <%= @entry.entry_type %> has been stored with the following details:
 
   From: <%= @entry.from %>
@@ -6,7 +14,14 @@ Your <%= @entry.entry_type %> has been stored with the following details:
   Number of seats: <%= @entry.seats %>
   Notes: <%= @entry.notes %>
 
-Please, if your entry should be removed from our database, click on the following link.
+
+<% if @entry.entry_type.to_sym == :request %>
+People who have a ride to offer may now contact you through our web site.
+<% else %>
+People looking for a ride may now contact you through our web site.
+<% end %>
+
+If your entry should be removed from our database because it is outdated or no longer neccessary, please click on the following link.
 
 <%= entry_remove_url(@entry, secret: @entry.secret) %>
 
