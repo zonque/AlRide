@@ -23,6 +23,7 @@ class EntriesController < ApplicationController
   # POST /entries.json
   def create
     @entry = Entry.new(entry_params)
+    @entry.locale = I18n.locale
     @title = "New #{@entry.entry_type}"
 
     respond_to do |format|
