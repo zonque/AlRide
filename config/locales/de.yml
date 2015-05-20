@@ -1,9 +1,9 @@
 de:
   welcome_to: "Herzlich willkommen bei"
   have_a_ride: "Ich habe eine MFG anzubieten!"
-  need_a_ride: "Ich brauche eine MFG!"
+  need_a_ride: "Ich suche eine MFG!"
   people_who_have_a_ride: "Leute, die eine MFG anbieten"
-  people_who_need_a_ride: "Leute, die eine MFG brauchen"
+  people_who_need_a_ride: "Leute, die eine MFG suchen"
   show_details: "Details anzeigen"
   cancel: "Abbrechen"
   back: "Zurück"
@@ -24,7 +24,7 @@ de:
   your_entry_has_been_created: "Dein %{type} wurde angelegt"
   someone_contacted_you: "Jemand hat dich kontaktiert"
 
-  name_is_looking_for_a_ride: "%{name} braucht eine MFG"
+  name_is_looking_for_a_ride: "%{name} sucht eine MFG"
   name_has_a_ride_to_share: "%{name} hat eine MFG anzubieten"
 
   entry_was_successfully_created: "Eintrag wurde erfolgreich angelegt."
