@@ -16,13 +16,19 @@
   <div id="footer">
     <hr />
     <div class="container text-center">
-      <% if I18n.locale == :de %>
+      <% if I18n.locale != :en %>
         <%= link_to "English version", url_for(locale: :en) %>
       <% end %>
 
-      <% if I18n.locale == :en %>
+      <% if I18n.locale != :de %>
         <%= link_to "Deutsche Version", url_for(locale: :de) %>
       <% end %>
+
+      <br />
+      <small>
+        <%= link_to "GitHub project", "https://github.com/zonque/AlRide" %>
+      </small>
+      <hr />
     </div>
   </div>
 
