@@ -11,7 +11,7 @@ Each entry has a random secret assigned that is attached to a removal link which
 to every mail that is sent to an entry submitter. This way, no user management, authentication
 logic, role management or anything is needed.
 
-Built with Rails 4, Bootstrap and HAML.
+Built with Rails 4.2, Bootstrap and HAML.
 
 ## Installing
 
