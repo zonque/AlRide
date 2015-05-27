@@ -8,7 +8,8 @@ website, but only stored internally. The main view will only show database entri
 are in the future (minus some slack).
 
 Each entry has a random secret assigned that is attached to a removal link which is added
-to every mail that is sent to an entry submitter.
+to every mail that is sent to an entry submitter. This way, no user management, authentication
+logic, role management or anything is needed.
 
 Built with Rails 4, Bootstrap and HAML.
 
@@ -54,11 +55,21 @@ To start frab in the development environment simply run
     bundle exec rails server
 
 To start frab in the production environment make sure you
-did not skip step 8 and run:
+did not skip step 6 and run:
 
     rails server -e production
 
-(Note that for a "real" production environment you probably do not want to use this script, but rather something like unicorn or passenger.)
+(Note that for a "real" production environment you should really use something like unicorn or passenger.)
 
 Navigate to http://localhost:3000/ to use AlRide.
+
+## Contribute
+
+To contribute, please clone the project and send pull requests through GitHub.
+
+### TODO
+
+* Add more localizations
+
+* Fix bugs listed in the issue tracker of the GitHub project
 
