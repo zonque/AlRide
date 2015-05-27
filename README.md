@@ -46,7 +46,7 @@ Basically, to get started you need git, ruby (>= 2.0) and the bundler gem, then 
 7) Generate secret token and add the generated token into `config/initializers/secret_token.rb`
 
     rake secret
-    cp config/initializers/secret_token.rb.example config/initializers/secret_token.rb
+    cp config/initializers/secret_token.rb.template config/initializers/secret_token.rb
 
 8) Start the server
 
