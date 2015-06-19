@@ -8,5 +8,5 @@ Hallo <%= @entry.name %>,
 
 Wenn dein Eintrag nicht mehr aktuell ist und entfernt werden sollte, klicke bitte auf den folgenden Link.
 
-<%= entry_remove_url(@entry, secret: @entry.secret) %>
+<%= entry_remove_url(@entry, secret: @entry.secret, locale: I18n.locale) %>
 

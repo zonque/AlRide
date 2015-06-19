@@ -23,5 +23,5 @@ People looking for a ride may now contact you through our web site.
 
 If your entry should be removed from our database because it is outdated or no longer neccessary, please click on the following link.
 
-<%= entry_remove_url(@entry, secret: @entry.secret) %>
+<%= entry_remove_url(@entry, secret: @entry.secret, locale: I18n.locale) %>
 

@@ -21,7 +21,8 @@ en:
   please_complete_the_form: "Please complete the form below. Your email address will not be visible by anyone. A phone number is optional and will be shown to others."
   your_message: "Your message"
 
-  your_entry_has_been_created: "Your %{type} has been created"
+  your_offer_has_been_created: "Your offer has been recorded"
+  your_request_has_been_created: "Your request has been recorded"
   someone_contacted_you: "someone contacted you"
 
   name_is_looking_for_a_ride: "%{name} is looking for a ride"

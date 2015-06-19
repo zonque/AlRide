@@ -21,7 +21,8 @@ de:
   please_complete_the_form: "Bitte trage die Details in das Formular ein. Deine Emailadresse wird nicht weitergegeben. Die Telefonnummer ist optional und für jeden sichtbar."
   your_message: "Deine Nachricht"
 
-  your_entry_has_been_created: "Dein %{type} wurde angelegt"
+  your_offer_has_been_created: "Dein Angebot wurde gespeichert"
+  your_request_has_been_created: "Dein Gesuch wurde gespeichert"
   someone_contacted_you: "Jemand hat dich kontaktiert"
 
   name_is_looking_for_a_ride: "%{name} sucht eine MFG"
