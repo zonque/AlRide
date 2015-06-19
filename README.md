@@ -1,6 +1,6 @@
 # AlRide - simple ride sharing platform
 
-AlRide is a ride sharing platform that is a simple as is gets.
+AlRide is a ride sharing platform that is as simple as is gets.
 
 Anyone may enter ride offers and ride requests, and other people are able to contact
 the submitter through a contact form. The email address is not shown to anyone on the
