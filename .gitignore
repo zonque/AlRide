@@ -15,4 +15,4 @@
 /log/*.log
 /tmp
 
-config/settings.yml
+# config/settings.yml
