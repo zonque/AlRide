@@ -1,0 +1,9 @@
+production:
+  # no need to specify port, when default (80) is used
+  host: alride.example.com
+  protocol: https
+  from_email: noreply@alride.example.com
+  # smtp server settings. see
+  # http://api.rubyonrails.org/classes/ActionMailer/Base.html
+  # for all available options
+  platform_name: 'AlRide'
