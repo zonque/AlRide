@@ -1,8 +1,8 @@
 production:
   # no need to specify port, when default (80) is used
-  host: alride.example.com
+  host: <%= ENV['HEROKU_HOSTNAME'] %>
   protocol: https
-  from_email: noreply@alride.example.com
+  from_email: noreply@<%= ENV['HEROKU_HOSTNAME'] %>
   # smtp server settings. see
   # http://api.rubyonrails.org/classes/ActionMailer/Base.html
   # for all available options

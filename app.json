@@ -15,6 +15,10 @@
       "description": "A secret key for verifying the integrity of signed cookies.",
       "generator": "secret"
     },
+    "HEROKU_HOSTNAME": {
+      "description": "The domain to use to send your emails, this can be the heroku domain for now.",
+      "value": "<insert your appname here>.herokuapp.com"
+    },
     "RACK_ENV": {
       "description": "Rack environment",
       "value": "production"
