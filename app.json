@@ -7,6 +7,9 @@
   ],
   "website": "https://github.com/zonque/AlRide/blob/master/README.md",
   "repository": "https://github.com/zonque/AlRide",
+  "scripts": {
+    "postdeploy": "bundle exec rake db:setup"
+  },
   "env": {
     "SECRET_TOKEN": {
       "description": "A secret key for verifying the integrity of signed cookies.",
