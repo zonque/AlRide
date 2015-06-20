@@ -63,6 +63,10 @@ did not skip step 6 and run:
 
 Navigate to http://localhost:3000/ to use AlRide.
 
+## Deploy to heroku
+
+[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
 ## Contribute
 
 To contribute, please clone the project and send pull requests through GitHub.
@@ -72,4 +76,3 @@ To contribute, please clone the project and send pull requests through GitHub.
 * Add more localizations
 
 * Fix bugs listed in the issue tracker of the GitHub project
-

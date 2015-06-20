@@ -1,0 +1,29 @@
+{
+  "name" : "AlRide RideSharing made Simple",
+  "description": "Rails application for getting a ride share.",
+  "keywords": [
+    "productivity",
+    "community"
+  ],
+  "website": "https://github.com/zonque/AlRide/blob/master/README.md",
+  "repository": "https://github.com/zonque/AlRide",
+  "env": {
+    "SECRET_TOKEN": {
+      "description": "A secret key for verifying the integrity of signed cookies.",
+      "generator": "secret"
+    },
+    "RACK_ENV": {
+      "description": "Rack environment",
+      "value": "production"
+    },
+    "RAILS_ENV": {
+      "description": "Rack environment",
+      "value": "production"
+    }
+  },
+  "addons": [
+    "heroku-postgresql",
+    "mandrill"
+  ]
+}
+
