@@ -1,7 +1,15 @@
-ActionMailer::Base.default_url_options = { host: Settings.host, protocol: Settings.protocol }
-if Settings['smtp_settings']
-  smtp_settings = Hash.new
-  Settings.smtp_settings.each {|k, v| smtp_settings[k.to_sym] = v }
-  ActionMailer::Base.smtp_settings = smtp_settings
-end
+require 'dotenv'
+Dotenv.load
+
+ActionMailer::Base.default_url_options = {
+  host: ENV['ALRIDE_HOST'],
+  port: ENV['ALRIDE_PORT'],
+  protocol: ENV['ALRIDE_PROTOCOL'],
+}
+
+ActionMailer::Base.smtp_settings = {
+  address: ENV['ALRIDE_SMTP_SERVER'],
+}
+
+AlRide::Application.config.secret_token = ENV['ALRIDE_SECRET']
 
