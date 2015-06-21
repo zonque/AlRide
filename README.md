@@ -60,6 +60,13 @@ did not skip step 6 and run:
 
 Navigate to http://localhost:3000/ to use AlRide.
 
+## Customize
+
+The page header on the default welcome screen can be customized by putting Markdown formatted content into a file called `config/page_header.<I18n>.md`,
+where `<I18n>` is one of the supported locale variables (`en`, `de`, ...).
+
+If such a files doesn't exist, the configured platform name is shown instead.
+
 ## Upgrading
 
 Note that when you're upgrading an existing installation of this project, you need to transfer your configuration from `config/settings.yml` to `.env`.

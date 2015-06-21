@@ -128,6 +128,7 @@ GEM
     rake (10.4.2)
     rdoc (4.2.0)
       json (~> 1.4)
+    redcarpet (3.1.1)
     ref (1.0.5)
     ruby_parser (3.7.0)
       sexp_processor (~> 4.1)
@@ -181,6 +182,7 @@ DEPENDENCIES
   less-rails
   letter_opener
   rails (~> 4.2.0)
+  redcarpet
   sass-rails (~> 5.0.0)
   sdoc
   sqlite3

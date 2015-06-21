@@ -38,6 +38,7 @@ gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) support
 gem "twitter-bootstrap-rails", '2.2.8'
 gem 'haml-rails'
 gem 'dotenv'
+gem 'redcarpet'
 
 group :development do
   gem 'letter_opener'
