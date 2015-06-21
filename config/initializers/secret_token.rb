@@ -7,4 +7,4 @@
 
 # You can generate one with "rake secret"
 AlRide::Application.config.secret_token =
-  ENV['SECRET_TOKEN'] || (raise "No Secret Token")
+  Settings['secret'] || (raise "No Secret Token")

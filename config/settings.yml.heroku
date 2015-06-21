@@ -7,3 +7,4 @@ production:
   # http://api.rubyonrails.org/classes/ActionMailer/Base.html
   # for all available options
   platform_name: 'AlRide'
+  secret: <%= ENV['SECRET_TOKEN'] %>
