@@ -81,3 +81,6 @@ To contribute, please clone the project and send pull requests through GitHub.
 
 * Fix bugs listed in the issue tracker of the GitHub project
 
+## Deploy to heroku
+
+[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
