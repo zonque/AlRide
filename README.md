@@ -15,6 +15,8 @@ Built with Rails 4.2, Bootstrap and HAML.
 
 ## Installing
 
+### Self hosting
+
 AlRide is a standard Rails 4 application. You can pretty much follow any of the available install guides, or follow the one below.
 
 Basically, to get started you need git, ruby (>= 2.0) and the bundler gem, then follow these steps.
@@ -60,6 +62,14 @@ did not skip step 6 and run:
 
 Navigate to http://localhost:3000/ to use AlRide.
 
+### Heroku
+
+Alternative to host AlRide on your own hardware, you can host AlRide on [Heroku](https://heroku.com). To make this even quicker, click on the button below:
+
+[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
+That will setup everything on heroku, you'll need to provide is the application name and URL.
+
 ## Customize
 
 The page header on the default welcome screen can be customized by putting Markdown formatted content into a file called `config/page_header.<I18n>.md`,
@@ -80,4 +90,3 @@ To contribute, please clone the project and send pull requests through GitHub.
 * Add more localizations
 
 * Fix bugs listed in the issue tracker of the GitHub project
-

@@ -3,9 +3,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.2.0'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0.0'
 
@@ -41,6 +38,9 @@ gem 'dotenv'
 gem 'redcarpet'
 
 group :development do
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
+
   gem 'letter_opener'
 end
 
@@ -55,3 +55,12 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# This group is used for deployment to heroku which doesn't support
+# sqlite, hence this has postgres.
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+  # comment this in if you which to use sqlite in production
+  # gem 'sqlite3'
+end
