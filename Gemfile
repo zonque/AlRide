@@ -34,7 +34,8 @@ gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails", '2.2.8'
 gem 'haml-rails'
-gem 'settingslogic'
+gem 'dotenv'
+gem 'redcarpet'
 
 group :development do
   # Use sqlite3 as the database for Active Record

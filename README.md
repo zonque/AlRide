@@ -33,7 +33,9 @@ Basically, to get started you need git, ruby (>= 2.0) and the bundler gem, then 
 
 4) Create and modify settings:
 
-    cp config/settings.yml.template config/settings.yml
+    cp .env.template .env
+
+In particular, make sure to set the secret token for your application in `.env`. `rake secret` will generate one for you.
 
 5) Create and setup the database
 
@@ -43,12 +45,7 @@ Basically, to get started you need git, ruby (>= 2.0) and the bundler gem, then 
 
     rake assets:precompile
 
-7) Generate secret token and add the generated token into `config/initializers/secret_token.rb`
-
-    rake secret
-    cp config/initializers/secret_token.rb.template config/initializers/secret_token.rb
-
-8) Start the server
+7) Start the server
 
 To start frab in the development environment simply run
 
@@ -63,9 +60,16 @@ did not skip step 6 and run:
 
 Navigate to http://localhost:3000/ to use AlRide.
 
-## Deploy to heroku
+## Customize
 
-[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+The page header on the default welcome screen can be customized by putting Markdown formatted content into a file called `config/page_header.<I18n>.md`,
+where `<I18n>` is one of the supported locale variables (`en`, `de`, ...).
+
+If such a files doesn't exist, the configured platform name is shown instead.
+
+## Upgrading
+
+Note that when you're upgrading an existing installation of this project, you need to transfer your configuration from `config/settings.yml` to `.env`.
 
 ## Contribute
 
@@ -76,3 +80,7 @@ To contribute, please clone the project and send pull requests through GitHub.
 * Add more localizations
 
 * Fix bugs listed in the issue tracker of the GitHub project
+
+## Deploy to heroku
+
+[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)

@@ -47,6 +47,7 @@ GEM
       execjs
     coffee-script-source (1.9.1.1)
     commonjs (0.2.7)
+    dotenv (2.0.2)
     erubis (2.7.0)
     execjs (2.5.2)
     globalid (0.3.5)
@@ -133,6 +134,7 @@ GEM
     rake (10.4.2)
     rdoc (4.2.0)
       json (~> 1.4)
+    redcarpet (3.1.1)
     ref (1.0.5)
     ruby_parser (3.7.0)
       sexp_processor (~> 4.1)
@@ -146,7 +148,6 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
-    settingslogic (2.0.9)
     sexp_processor (4.6.0)
     sprockets (3.2.0)
       rack (~> 1.0)
@@ -179,6 +180,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails
+  dotenv
   haml-rails
   jbuilder (~> 1.2)
   jquery-rails
@@ -188,9 +190,9 @@ DEPENDENCIES
   pg
   rails (~> 4.2.0)
   rails_12factor
+  redcarpet
   sass-rails (~> 5.0.0)
   sdoc
-  settingslogic
   sqlite3
   therubyracer
   turbolinks

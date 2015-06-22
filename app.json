@@ -11,14 +11,26 @@
     "postdeploy": "bundle exec rake db:setup"
   },
   "env": {
-    "SECRET_TOKEN": {
+    "ALRIDE_SECRET": {
       "description": "A secret key for verifying the integrity of signed cookies.",
       "generator": "secret"
     },
-    "HEROKU_HOSTNAME": {
+    "ALRIDE_HOST": {
       "description": "The domain to use to send your emails, this can be the heroku domain for now.",
       "value": "<insert your appname here>.herokuapp.com"
     },
+    "ALRIDE_FROM_EMAIL" {
+      "description": "Email used to send emails out to participants.",
+      "value": "noreply@<your heroku app>.herokuapp.com"
+    }.
+    "ALRIDE_PROTOCOL" {
+      "description": "Protocol to use in linkes in emails. Heroku supports https.",
+      "value": "https"
+    }.
+    "ALRIDE_PORT" {
+      "description": "Port to use in linkes in emails",
+      "value": "443"
+    }.
     "RACK_ENV": {
       "description": "Rack environment",
       "value": "production"

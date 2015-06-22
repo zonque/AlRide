@@ -1,0 +1,26 @@
+!!!DOCTYPE html
+%html
+  %head
+    %title= ENV['ALRIDE_PLATFORM_NAME']
+    =stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+    =javascript_include_tag "application", "data-turbolinks-track" => true
+    =csrf_meta_tags
+
+  %body
+    .container
+      =flash_messages
+      =yield
+
+  #footer
+    %hr
+    .container.text-center
+      - if I18n.locale != :en
+        =link_to "English version", url_for(locale: :en)
+
+      - if I18n.locale != :de
+        =link_to "Deutsche Version", url_for(locale: :de)
+
+      %br
+      %small
+        =link_to "GitHub project", "https://github.com/zonque/AlRide"
+      %hr

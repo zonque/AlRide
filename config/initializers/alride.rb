@@ -1,17 +1,27 @@
-ActionMailer::Base.default_url_options = { host: Settings.host, protocol: Settings.protocol }
+require 'dotenv'
+Dotenv.load
 
-if Settings['smtp_settings']
-  smtp_settings = Hash.new
-  Settings.smtp_settings.each {|k, v| smtp_settings[k.to_sym] = v }
-  ActionMailer::Base.smtp_settings = smtp_settings
-elsif ENV['MANDRILL_USERNAME']
+ActionMailer::Base.default_url_options = {
+  host: ENV['ALRIDE_HOST'],
+  port: ENV['ALRIDE_PORT'],
+  protocol: ENV['ALRIDE_PROTOCOL'],
+}
+
+if ENV['MANDRILL_USERNAME']
+  # For heroku deployment, we use Mandrill as mail server.
   ActionMailer::Base.smtp_settings = {
-    :port =>           '587',
-    :address =>        'smtp.mandrillapp.com',
-    :user_name =>      ENV['MANDRILL_USERNAME'],
-    :password =>       ENV['MANDRILL_APIKEY'],
-    :domain =>         'heroku.com',
-    :authentication => :plain
+    port:            '587',
+    address:         'smtp.mandrillapp.com',
+    user_name:       ENV['MANDRILL_USERNAME'],
+    password:        ENV['MANDRILL_APIKEY'],
+    domain:          'heroku.com',
+    authentication:  :plain
   }
   ActionMailer::Base.delivery_method = :smtp
+else
+  ActionMailer::Base.smtp_settings = {
+    address: ENV['ALRIDE_SMTP_SERVER'],
+  }
 end
+
+AlRide::Application.config.secret_token = ENV['ALRIDE_SECRET']
