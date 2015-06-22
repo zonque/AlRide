@@ -33,6 +33,9 @@ Basically, to get started you need git, ruby (>= 2.0) and the bundler gem, then 
 
     bundle install
 
+If you want to use `sqlite` in your `production` environment, make sure to add `gem 'sqlite'` to the `production` group of
+`Gemfile` before running the `bundle` command.
+
 4) Create and modify settings:
 
     cp .env.template .env
