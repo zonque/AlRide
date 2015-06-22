@@ -38,6 +38,10 @@
     "RAILS_ENV": {
       "description": "Rack environment",
       "value": "production"
+    },
+    "BUNDLE_GEMFILE": {
+      "description": "Gemfile to use on heroku",
+      "value": "Gemfile.heroku"
     }
   },
   "addons": [
