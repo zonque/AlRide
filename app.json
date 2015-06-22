@@ -1,0 +1,52 @@
+{
+  "name" : "AlRide RideSharing made Simple",
+  "description": "Rails application for getting a ride share.",
+  "keywords": [
+    "productivity",
+    "community"
+  ],
+  "website": "https://github.com/zonque/AlRide/blob/master/README.md",
+  "repository": "https://github.com/zonque/AlRide",
+  "scripts": {
+    "postdeploy": "bundle exec rake db:setup"
+  },
+  "env": {
+    "ALRIDE_PLATFORM_NAME": {
+      "description": "Name of the application for your usage",
+      "value": "AlRide"
+    },
+    "ALRIDE_HOST": {
+      "description": "The domain to use to send your emails, this can be the heroku domain for now.",
+      "value": "<insert your appname here>.herokuapp.com"
+    },
+    "ALRIDE_FROM_EMAIL": {
+      "description": "Email used to send emails out to participants.",
+      "value": "noreply@<your heroku app>.herokuapp.com"
+    },
+    "ALRIDE_PROTOCOL": {
+      "description": "Protocol to use in linkes in emails. Heroku supports https.",
+      "value": "https"
+    },
+    "ALRIDE_PORT": {
+      "description": "Port to use in linkes in emails",
+      "value": "443"
+    },
+    "ALRIDE_SECRET": {
+      "description": "A secret key for verifying the integrity of signed cookies.",
+      "generator": "secret"
+    },
+    "RACK_ENV": {
+      "description": "Rack environment",
+      "value": "production"
+    },
+    "RAILS_ENV": {
+      "description": "Rack environment",
+      "value": "production"
+    }
+  },
+  "addons": [
+    "heroku-postgresql",
+    "mandrill"
+  ]
+}
+
