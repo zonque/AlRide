@@ -38,10 +38,6 @@
     "RAILS_ENV": {
       "description": "Rack environment",
       "value": "production"
-    },
-    "HEROKU": {
-      "description": "Flag for the Gemfile",
-      "value": "yes"
     }
   },
   "addons": [
