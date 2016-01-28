@@ -29,6 +29,10 @@
     .controls
       = f.text_field :seats, :class => 'text_field'
   .control-group
+    = f.label @entry.entry_type.to_sym == :offer ? t('are_you_driving_youself') : t('would_you_drive'), :class => 'control-label'
+    .controls
+      = f.check_box :driver, :class => 'check_box'
+  .control-group
     = f.label :notes, :class => 'control-label'
     .controls
       = f.text_area :notes, :class => 'text_field', :class => "input-xlarge"
@@ -43,4 +47,3 @@
         timeFormat: "hh:mm"
     });
   })
-

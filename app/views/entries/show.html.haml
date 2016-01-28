@@ -21,6 +21,10 @@
     %tr
       %td= t('seats') + ':'
       %td= @entry.seats
+    - if @entry.entry_type.to_sym == :request
+      %tr
+        %td= t('person_would_drive')
+        %td= yes_no(@entry.driver)
     %tr
       %td= t('notes') + ':'
       %td= @entry.notes
@@ -37,6 +41,11 @@
     = label_tag t('your_email'), nil, :class => 'input-xlarge'
     .controls
       = text_field_tag :from, nil, :class => 'text_field', :placeholder => t("your_email_address")
+  - if @entry.entry_type.to_sym == :offer
+    .control-group
+      = label_tag t('would_you_drive')
+      .controls
+        = check_box_tag :would_drive, nil, :class => 'check_box'
   .control-group
     = label_tag t('your_message'), nil, :class => 'input-xlarge'
     .controls

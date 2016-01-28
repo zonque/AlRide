@@ -4,6 +4,11 @@ Hallo <%= @entry.name %>,
 
 <%= @text %>
 
+<% if @would_drive %>
+--------------------------
+<%= @from %> hat angeboten, das Auto zu fahren.
+<% end %>
+
 --------------------------
 
 Wenn dein Eintrag nicht mehr aktuell ist und entfernt werden sollte, klicke bitte auf den folgenden Link.

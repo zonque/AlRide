@@ -4,6 +4,11 @@ Hi <%= @entry.name %>,
 
 <%= @text %>
 
+<% if @would_drive %>
+--------------------------
+<%= @from %> has offered to drive the car if needed.
+<% end %>
+
 --------------------------
 
 If your entry should be removed from our database because it is outdated or no longer neccessary, please click on the following link.

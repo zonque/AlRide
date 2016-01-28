@@ -9,10 +9,11 @@ class UserMailer < ActionMailer::Base
     end
   end
 
-  def contact_entry_person(entry, from, text)
+  def contact_entry_person(entry, from, text, would_drive)
     @entry = entry
     @text = text
     @from = from
+    @would_drive = would_drive
 
     I18n.with_locale(@entry.locale) do
       mail to: @entry.email, reply_to: from, subject: "#{ENV['ALRIDE_PLATFORM_NAME']}: " + t('someone_contacted_you')

@@ -16,6 +16,11 @@ class EntriesController < ApplicationController
     @entry = Entry.new
     @entry.entry_type = params[:entry_type]
     @entry.seats = 1
+
+    if @entry.entry_type.to_sym == :offer
+        @entry.driver = true
+    end
+
     @title = "New #{@entry.entry_type}"
   end
 
@@ -56,7 +61,7 @@ class EntriesController < ApplicationController
 
   def send_email
     @entry = Entry.find(params[:entry_id])
-    UserMailer.contact_entry_person(@entry, params[:from], params[:text]).deliver
+    UserMailer.contact_entry_person(@entry, params[:from], params[:text], params[:would_drive]).deliver
     redirect_to root_path, flash: { success: t('mail_has_been_sent') }
   end
 

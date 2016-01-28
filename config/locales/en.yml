@@ -10,6 +10,9 @@ en:
   create_entry: "Create entry"
   send_email: "Send email"
 
+  bool_yes: "Yes"
+  bool_no: "No"
+
   your_name: "Your name"
   your_email: "Your email"
   your_email_address: "your@email-address.org"
@@ -40,6 +43,9 @@ en:
   from: "From"
   to: "To"
   seats: "Number of seats"
+  are_you_driving_youself: "Are you willing and able to drive the car yourself?"
+  would_you_drive: "Would you offer to drive the car as well?"
+  person_would_drive: "Would this person also drive the car?"
   notes: "Notes"
 
   offer: "offer"

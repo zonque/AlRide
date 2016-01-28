@@ -11,22 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150519153854) do
+ActiveRecord::Schema.define(version: 20160127185205) do
 
-  create_table "entries", force: true do |t|
-    t.string   "entry_type"
-    t.string   "name"
-    t.string   "email"
-    t.string   "phone"
+  create_table "entries", force: :cascade do |t|
+    t.string   "entry_type", limit: 255
+    t.string   "name",       limit: 255
+    t.string   "email",      limit: 255
+    t.string   "phone",      limit: 255
     t.datetime "date"
-    t.string   "from"
-    t.string   "to"
+    t.string   "from",       limit: 255
+    t.string   "to",         limit: 255
     t.integer  "seats"
     t.text     "notes"
-    t.string   "secret"
+    t.string   "secret",     limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "locale",     default: "en"
+    t.string   "locale",     limit: 255, default: "en"
+    t.boolean  "driver"
   end
 
 end

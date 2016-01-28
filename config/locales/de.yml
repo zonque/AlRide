@@ -10,6 +10,9 @@ de:
   create_entry: "Eintrag anlegen"
   send_email: "Email abschicken"
 
+  bool_yes: "Ja"
+  bool_no: "Nein"
+
   your_name: "Dein Name"
   your_email: "Deine Emailadresse"
   your_email_address: "deine@email-addresse.org"
@@ -40,6 +43,10 @@ de:
   from: "Von"
   to: "Nach"
   seats: "Anzahl an Sitzplätzen"
+  are_you_driving_youself: "Fährst Du Dein Auto selbst?"
+  would_you_drive: "Würdest Du Dich als Fahrer anbieten?"
+  driver_needed: "Für diese Fahrt wird noch ein Fahrer benötigt"
+  person_would_drive: "Würde sich diese Person anbieten, das Auto zu fahren?"
   notes: "Sonstiges"
 
   offer: "Angebot"
