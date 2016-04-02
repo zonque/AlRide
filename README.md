@@ -88,6 +88,10 @@ Note that when you're upgrading an existing installation of this project, you ne
 
 To contribute, please clone the project and send pull requests through GitHub.
 
+## License
+
+All code in this repository is released under the [GNU Affero General Public License](https://www.gnu.org/licenses/agpl-3.0.en.html) unless explicitly stated differently. Please refer to the `LICENSE` file for more detailed information.
+
 ### TODO
 
 * Add more localizations
