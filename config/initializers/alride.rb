@@ -21,6 +21,7 @@ if ENV['MANDRILL_USERNAME']
 else
   ActionMailer::Base.smtp_settings = {
     address: ENV['ALRIDE_SMTP_SERVER'],
+    domain:  ENV['ALRIDE_SMTP_DOMAIN'],
   }
 end
 
