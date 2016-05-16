@@ -8,19 +8,32 @@
 
   %body
     .container
-      =flash_messages
+      -if flash.any?
+        .row
+          .col-md-12
+            .flash
+              -flash.each do |msg_type, message|
+                %div{ class: "alert #{bootstrap_class_for(msg_type)} fade in", role: "alert" }
+                  %button.close{ data: { dismiss: 'alert' }} ×
+                  %span=message
+
       =yield
 
   #footer
-    %hr
     .container.text-center
-      - if I18n.locale != :en
-        =link_to "English version", url_for(locale: :en)
+      .row
+        .col-md-12
+          %hr
 
-      - if I18n.locale != :de
-        =link_to "Deutsche Version", url_for(locale: :de)
+      .row
+        .col-md-12
+          - if I18n.locale != :en
+            =link_to "English version", url_for(locale: :en)
 
-      %br
-      %small
-        =link_to "GitHub project", "https://github.com/zonque/AlRide"
-      %hr
+          - if I18n.locale != :de
+            =link_to "Deutsche Version", url_for(locale: :de)
+
+      .row
+        .col-md-12
+          %small
+            =link_to "GitHub project", "https://github.com/zonque/AlRide"

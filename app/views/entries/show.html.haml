@@ -1,54 +1,90 @@
-.page-header
-  %h1= @title
+.container
+  .row
+    .col-md-2
+    .col-md-8
+      .page-header
+        %h1= @title
 
-%table.table
-  %tbody
-    %tr
-      %td= t('name') + ':'
-      %td= @entry.name
-    %tr
-      %td= t('phone') + ':'
-      %td= @entry.phone
-    %tr
-      %td= t('date') + ':'
-      %td= @entry.date.to_formatted_s(:long)
-    %tr
-      %td= t('from') + ':'
-      %td= @entry.from
-    %tr
-      %td= t('to') + ':'
-      %td= @entry.to
-    %tr
-      %td= t('seats') + ':'
-      %td= @entry.seats
-    - if @entry.entry_type.to_sym == :request
-      %tr
-        %td= t('person_would_drive')
-        %td= yes_no(@entry.driver)
-    %tr
-      %td= t('notes') + ':'
-      %td= @entry.notes
+      .panel.panel-default
+        .panel-heading
+          %h3.panel-title= t('details')
 
-.form-actions
-  = link_to t('back'), root_path, class: 'btn'
+        .panel-body
+          .row
+            .col-md-3
+              =t('name') + ':'
+            .col-md-9
+              =@entry.name
 
-%h2=t '.contact'
+          .row
+            .col-md-3
+              =t('phone') + ':'
+            .col-md-9
+              =@entry.phone
 
-= form_tag entry_send_email_path(@entry), html: { class: 'form-horizontal' } do
-  %p=t('to_contact_text', name: @entry.name)
-  %hr
-  .control-group
-    = label_tag t('your_email'), nil, class: 'input-xlarge'
-    .controls
-      = text_field_tag :from, nil, class: 'text_field', placeholder: t("your_email_address")
-  - if @entry.entry_type.to_sym == :offer
-    .control-group
-      = label_tag t('would_you_drive')
-      .controls
-        = check_box_tag :would_drive, nil, class: 'check_box'
-  .control-group
-    = label_tag t('your_message'), nil, class: 'input-xlarge'
-    .controls
-      = text_area_tag :text, nil, size: "100x20", class: 'text_field input-xlarge'
-  .form-actions
-    = submit_tag t('send_email'), class: 'btn btn-primary'
+          .row
+            .col-md-3
+              =t('entry_date') + ':'
+            .col-md-9
+              =l @entry.date, format: :long
+
+          .row
+            .col-md-3
+              =t('from') + ':'
+            .col-md-9
+              =@entry.from
+
+          .row
+            .col-md-3
+              =t('to') + ':'
+            .col-md-9
+              =@entry.to
+
+          .row
+            .col-md-3
+              =t('seats') + ':'
+            .col-md-9
+              =@entry.seats
+
+          - if @entry.entry_type.to_sym == :request
+            .row
+              .col-md-3
+                =t('person_would_drive')
+              .col-md-9
+                =yes_no(@entry.driver)
+
+          .row
+            .col-md-3
+              =t('notes') + ':'
+            .col-md-9
+              =@entry.notes
+
+        .panel-footer
+          .form-actions
+            =link_to root_path, class: 'btn btn-default btn-primary', role: 'button' do
+              %span.glyphicon.glyphicon-arrow-left
+              =t('back')
+
+      =form_tag entry_send_email_path(@entry) do
+        %h2=t '.contact'
+        .panel.panel-default
+          .panel-heading
+            %h3.panel-title= t('to_contact_text', name: @entry.name)
+
+          .panel-body
+            .form-group
+              =label_tag t('your_email'), nil, class: 'control-label'
+              =text_field_tag :from, nil, class: 'form-control', placeholder: t("your_email_address")
+
+            - if @entry.entry_type.to_sym == :offer
+              .form-group
+                =label_tag t('would_you_drive'), nil, class: 'control-label'
+                =check_box_tag :would_drive, nil, class: 'check_box'
+
+            .form-group
+              =label_tag t('your_message'), nil, class: 'control-label'
+              =text_area_tag :text, nil, size: "100x20", class: 'text_field form-control'
+
+          .panel-footer
+            .form-actions
+              =submit_tag t('send_email'), class: 'btn btn-primary'

@@ -39,10 +39,11 @@ de:
 
   name: "Name"
   phone: "Telefonnummer"
-  date: "Datum"
+  entry_date: "Datum"
+  who: "Wer"
   from: "Von"
   to: "Nach"
-  seats: "Anzahl an Sitzplätzen"
+  seats: "Sitzplätze"
   are_you_driving_youself: "Fährst Du Dein Auto selbst?"
   would_you_drive: "Würdest Du Dich als Fahrer anbieten?"
   driver_needed: "Für diese Fahrt wird noch ein Fahrer benötigt"

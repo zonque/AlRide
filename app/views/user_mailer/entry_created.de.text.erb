@@ -10,7 +10,7 @@ Dein <%= t(@entry.entry_type) %> wurde mit den folgenden Details gespeichert:
 
   Von:   <%= @entry.from %>
   Nach:  <%= @entry.to %>
-  Datum: <%= @entry.date %>
+  Datum: <%= I18n.l @entry.date, format: :long %>
   Anzahl an Sitzplätzen: <%= @entry.seats %>
   Sonstiges: <%= @entry.notes %>
 

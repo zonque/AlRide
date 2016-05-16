@@ -10,7 +10,7 @@ Your <%= @entry.entry_type %> has been stored with the following details:
 
   From: <%= @entry.from %>
   To:   <%= @entry.to %>
-  Date: <%= @entry.date %>
+  Date: <%= I18n.l @entry.date, format: :long %>
   Number of seats: <%= @entry.seats %>
   Notes: <%= @entry.notes %>
 

@@ -4,11 +4,20 @@
 /* flash-messages */
 
 .fat-buttons {
-  margin-top: 10px;
-  margin-bottom: 30px;
   text-align: center;
 
   .btn {
     margin: 5px;
   }
+}
+
+.flash {
+  padding-top: 30px;
+  span {
+    font-size: 150%;
+  }
+}
+
+body {
+  padding-bottom: 20px;
 }

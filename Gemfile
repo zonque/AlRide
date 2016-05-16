@@ -13,17 +13,17 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 
-# Use jquery as the JavaScript library
 gem 'jquery-rails'
-gem "jquery-ui-rails"
+
+gem 'rails-i18n', '~> 4.0.0'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
+gem 'jbuilder', '~> 2.0'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -31,11 +31,11 @@ group :doc do
 end
 
 gem "therubyracer"
-gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-gem "twitter-bootstrap-rails", '2.2.8'
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'haml-rails'
 gem 'dotenv'
 gem 'redcarpet'
+gem 'pry-rails'
 
 group :development do
   # Use sqlite3 as the database for Active Record
@@ -44,12 +44,6 @@ group :development do
   gem 'letter_opener'
   gem 'faker'
 end
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
-
-# Use unicorn as the app server
-# gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
@@ -60,6 +54,7 @@ end
 # This group is used for deployment to heroku which doesn't support
 # sqlite, hence this has postgres.
 group :production do
+  gem 'unicorn'
   gem 'pg'
   gem 'rails_12factor'
   # comment this in if you which to use sqlite in production
