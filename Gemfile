@@ -42,6 +42,7 @@ group :development do
   gem 'sqlite3'
   gem 'brakeman'
   gem 'letter_opener'
+  gem 'faker'
 end
 
 # Use ActiveModel has_secure_password
