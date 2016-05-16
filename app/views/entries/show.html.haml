@@ -30,25 +30,25 @@
       %td= @entry.notes
 
 .form-actions
-  = link_to t('back'), root_path, :class => 'btn'
+  = link_to t('back'), root_path, class: 'btn'
 
 %h2=t '.contact'
 
-= form_tag entry_send_email_path(@entry), :html => { :class => 'form-horizontal' } do
+= form_tag entry_send_email_path(@entry), html: { class: 'form-horizontal' } do
   %p=t('to_contact_text', name: @entry.name)
   %hr
   .control-group
-    = label_tag t('your_email'), nil, :class => 'input-xlarge'
+    = label_tag t('your_email'), nil, class: 'input-xlarge'
     .controls
-      = text_field_tag :from, nil, :class => 'text_field', :placeholder => t("your_email_address")
+      = text_field_tag :from, nil, class: 'text_field', placeholder: t("your_email_address")
   - if @entry.entry_type.to_sym == :offer
     .control-group
       = label_tag t('would_you_drive')
       .controls
-        = check_box_tag :would_drive, nil, :class => 'check_box'
+        = check_box_tag :would_drive, nil, class: 'check_box'
   .control-group
-    = label_tag t('your_message'), nil, :class => 'input-xlarge'
+    = label_tag t('your_message'), nil, class: 'input-xlarge'
     .controls
-      = text_area_tag :text, nil, :size => "100x20", :class => 'text_field input-xlarge'
+      = text_area_tag :text, nil, size: "100x20", class: 'text_field input-xlarge'
   .form-actions
-    = submit_tag t('send_email'), :class => 'btn btn-primary'
+    = submit_tag t('send_email'), class: 'btn btn-primary'

@@ -1,44 +1,44 @@
-= form_for @entry, :html => { :class => 'form-horizontal' } do |f|
+= form_for @entry, html: { class: 'form-horizontal' } do |f|
   = f.hidden_field :entry_type
   .control-group
-    = f.label :name, :class => 'control-label'
+    = f.label :name, class: 'control-label'
     .controls
-      = f.text_field :name, :class => 'text_field', :placeholder => t('your_name')
+      = f.text_field :name, class: 'text_field', placeholder: t('your_name')
   .control-group
-    = f.label :email, :class => 'control-label'
+    = f.label :email, class: 'control-label'
     .controls
-      = f.text_field :email, :class => 'text_field', :placeholder => t('your_email_address')
+      = f.text_field :email, class: 'text_field', placeholder: t('your_email_address')
   .control-group
-    = f.label :phone, :class => 'control-label'
+    = f.label :phone, class: 'control-label'
     .controls
-      = f.text_field :phone, :class => 'text_field', :placeholder => t('your_phone_number')
+      = f.text_field :phone, class: 'text_field', placeholder: t('your_phone_number')
+      .control-group
+    = f.label :date, class: 'control-label'
+    .controls
+      = f.text_field :date, class: 'form-control', data: { date_format: 'YYYY/MM/DD' }, placeholder: t('date_and_time')
   .control-group
-    = f.label :date, :class => 'control-label'
+    = f.label :from, class: 'control-label'
     .controls
-      = f.text_field :date, :class => 'form-control', :data => { :date_format => 'YYYY/MM/DD' }, :placeholder => t('date_and_time')
+      = f.text_field :from, class: 'text_field', placeholder: t('your_start_point')
   .control-group
-    = f.label :from, :class => 'control-label'
+    = f.label :to, class: 'control-label'
     .controls
-      = f.text_field :from, :class => 'text_field', :placeholder => t('your_start_point')
+      = f.text_field :to, class: 'text_field', placeholder: t('your_destination')
   .control-group
-    = f.label :to, :class => 'control-label'
+    = f.label :seats, class: 'control-label'
     .controls
-      = f.text_field :to, :class => 'text_field', :placeholder => t('your_destination')
+      = f.text_field :seats, class: 'text_field'
   .control-group
-    = f.label :seats, :class => 'control-label'
+    = f.label @entry.entry_type.to_sym == :offer ? t('are_you_driving_youself') : t('would_you_drive'), class: 'control-label'
     .controls
-      = f.text_field :seats, :class => 'text_field'
+      = f.check_box :driver, class: 'check_box'
   .control-group
-    = f.label @entry.entry_type.to_sym == :offer ? t('are_you_driving_youself') : t('would_you_drive'), :class => 'control-label'
+    = f.label :notes, class: 'control-label'
     .controls
-      = f.check_box :driver, :class => 'check_box'
-  .control-group
-    = f.label :notes, :class => 'control-label'
-    .controls
-      = f.text_area :notes, :class => 'text_field', :class => "input-xlarge"
+      = f.text_area :notes, class: 'text_field', class: "input-xlarge"
   .form-actions
-    = f.submit t('create_entry'), :class => 'btn btn-primary'
-    = link_to t('cancel'), root_path, :class => 'btn'
+    = f.submit t('create_entry'), class: 'btn btn-primary'
+    = link_to t('cancel'), root_path, class: 'btn'
 
 :javascript
   $(function() {

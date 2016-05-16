@@ -9,14 +9,14 @@
     =link_to t('have_a_ride'), new_entry_path(entry_type: :offer),   class: 'btn btn-large btn-success'
     =link_to t('need_a_ride'), new_entry_path(entry_type: :request), class: 'btn btn-large btn-warning'
 
-%div{ :role => "tabpanel" }
+%div{ role: "tabpanel" }
   %ul.nav.nav-tabs{ role: "tablist" }
     %li.active{ role: "presentation" }
       = link_to t('people_who_have_a_ride') + " (#{@offers.length})", "#offers", 'aria-controls': 'offers', role: 'tab', 'data-toggle': 'tab'
     %li{ role: "presentation" }
       = link_to t('people_who_need_a_ride') + " (#{@requests.length})", "#requests", 'aria-controls': 'requests', role: 'tab', 'data-toggle': 'tab'
   .tab-content
-    .tab-pane.active{ :role => "tabpanel", id: "offers" }
+    .tab-pane.active{ role: "tabpanel", id: "offers" }
       =render 'entries/list', entries: @offers
-    .tab-pane{ :role => "tabpanel", id: "requests" }
+    .tab-pane{ role: "tabpanel", id: "requests" }
       =render 'entries/list', entries: @requests
