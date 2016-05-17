@@ -46,6 +46,6 @@
   },
   "addons": [
     "heroku-postgresql",
-    "mandrill"
+    "mailgun"
   ]
 }

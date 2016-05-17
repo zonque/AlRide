@@ -3,10 +3,10 @@ ActionMailer::Base.default_url_options = Settings.mail.default_url_options.to_ha
 if Settings.mandrill
   # For heroku deployment, we use Mandrill as mail server.
   ActionMailer::Base.smtp_settings = {
-    port:            '587',
-    address:         'smtp.mandrillapp.com',
-    user_name:       Settings.mandrill.username,
-    password:        Settings.mandrill.apikey,
+    port:            ENV['MAILGUN_SMTP_PORT'],
+    address:         ENV['MAILGUN_SMTP_SERVER'],
+    user_name:       ENV['MAILGUN_SMTP_LOGIN'],
+    password:        ENV['MAILGUN_SMTP_PASSWORD'],
     domain:          'heroku.com',
     authentication:  :plain
   }
