@@ -58,7 +58,6 @@ GEM
       activesupport (>= 3.0)
       deep_merge (~> 1.0, >= 1.0.1)
     deep_merge (1.0.1)
-    dotenv (2.1.1)
     erubis (2.7.0)
     execjs (2.6.0)
     faker (1.6.3)
@@ -200,7 +199,6 @@ DEPENDENCIES
   brakeman
   coffee-rails
   config
-  dotenv
   faker
   haml-rails
   jbuilder (~> 2.0)
