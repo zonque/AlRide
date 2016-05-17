@@ -15,8 +15,6 @@
 /log/*.log
 /tmp
 
-.env
-
 config/page_header*md
 
 config/settings.local.yml
