@@ -1,0 +1,15 @@
+platform_name: AlRide
+
+# Run 'rake secret' and copy the generated string into the variable below
+secret_key_base: 155715c60a7ee21eef0b11d65d7814e002c94736700e570607e2410bae95b26cb63af377632811b54b526ac215006971e3447d290f2332475eab8d4ff674e907
+
+mail:
+  default_url_options:
+    host: localhost
+    port: 3000
+    protocol: http
+
+  from: alride@localhost
+
+  smtp_settings:
+    server: localhost

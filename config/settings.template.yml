@@ -1,0 +1,15 @@
+# platform_name: AlRide
+#
+# Run 'rake secret' and copy the generated string into the variable below
+# secret_key_base:
+#
+# mail:
+#   default_url_options:
+#     host: your.web.server
+#     port: 443
+#     protocol: https
+#
+#   from: alride@your.domain
+#
+#   smtp_settings:
+#     server: localhost

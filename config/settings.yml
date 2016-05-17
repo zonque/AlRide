@@ -1,0 +1,6 @@
+platform_name: AlRide
+mail:
+  default_url_options:
+  from:
+  smtp_settings:
+  delivery_method: smtp

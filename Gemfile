@@ -4,7 +4,7 @@ gem 'rails', '~> 4.2.0'
 
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'coffee-rails'
-gem 'dotenv'
+gem 'config'
 gem 'haml-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'

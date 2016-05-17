@@ -54,6 +54,10 @@ GEM
       execjs
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.2)
+    config (1.2.0)
+      activesupport (>= 3.0)
+      deep_merge (~> 1.0, >= 1.0.1)
+    deep_merge (1.0.1)
     dotenv (2.1.1)
     erubis (2.7.0)
     execjs (2.6.0)
@@ -195,6 +199,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.6)
   brakeman
   coffee-rails
+  config
   dotenv
   faker
   haml-rails
