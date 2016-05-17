@@ -12,7 +12,6 @@ gem 'pry-rails'
 gem 'rails-i18n', '~> 4.0.0'
 gem 'redcarpet'
 gem 'sass-rails', '~> 5.0.0'
-gem 'therubyracer'
 gem 'therubyracer', platforms: :ruby
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
