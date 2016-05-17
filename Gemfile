@@ -5,6 +5,7 @@ gem 'rails', '~> 4.2.0'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'coffee-rails'
 gem 'config'
+gem 'faker'
 gem 'haml-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
@@ -25,7 +26,6 @@ group :development do
   # Use sqlite3 as the database for Active Record
   gem 'brakeman'
   # gem 'capistrano
-  gem 'faker'
   gem 'letter_opener'
   gem 'sqlite3'
 end
