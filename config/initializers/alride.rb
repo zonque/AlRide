@@ -1,6 +1,6 @@
-ActionMailer::Base.default_url_options = Settings.mail.default_url_options.to_hash
+ActionMailer::Base.default_url_options = Settings.mail.default_url_options.to_hash rescue {}
 
-if Settings.mandrill
+if ENV['MAILGUN_SMTP_SERVER']
   # For heroku deployment, we use Mandrill as mail server.
   ActionMailer::Base.smtp_settings = {
     port:            ENV['MAILGUN_SMTP_PORT'],
