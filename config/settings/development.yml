@@ -12,4 +12,4 @@ mail:
   from: alride@localhost
 
   smtp_settings:
-    server: localhost
+    address: localhost
