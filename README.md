@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/zonque/AlRide.svg?branch=master)](https://travis-ci.org/zonque/AlRide)
+
 # AlRide - simple ride sharing platform
 
 AlRide is a ride sharing platform that is as simple as is gets.
