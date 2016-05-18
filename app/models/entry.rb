@@ -33,7 +33,7 @@ class Entry < ActiveRecord::Base
   private
 
   def create_secret
-    self.secret = SecureRandom.uuid
+    self.secret = SecureRandom.hex
   end
 
   def send_mail
