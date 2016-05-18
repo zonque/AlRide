@@ -1,5 +1,5 @@
 AlRide::Application.routes.draw do
-  root to: 'welcome#index'
+  root to: 'entries#index'
 
   resources :entries do
     post 'send_email'
