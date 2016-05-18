@@ -30,6 +30,7 @@ group :development, :test do
   gem 'railroady'
   gem 'rspec-rails'
   gem 'simplecov', require: false
+  gem 'sqlite3'
 end
 
 group :development do
@@ -37,7 +38,6 @@ group :development do
   gem 'brakeman'
   # gem 'capistrano
   gem 'letter_opener'
-  gem 'sqlite3'
 end
 
 # This group is used for deployment to heroku which doesn't support
