@@ -10,55 +10,48 @@
           %h3.panel-title= t('details')
 
         .panel-body
-          .row
-            .col-md-3
-              =t('name') + ':'
-            .col-md-9
-              =@entry.name
+          %table.table.table-striped
+            %tbody
+              %tr
+                %th= t('name')
+                %td= @entry.name
 
-          -unless @entry.phone.blank?
-            .row
-              .col-md-3
-                =t('phone') + ':'
-              .col-md-9
-                =@entry.phone
+              -unless @entry.phone.blank?
+                %tr
+                  %th= t('phone')
+                  %td= @entry.phone
 
-          .row
-            .col-md-3
-              =t('entry_date') + ':'
-            .col-md-9
-              =l @entry.date, format: :long
+              %tr
+                %th= t('entry_date')
+                %td= l @entry.date, format: :long
 
-          .row
-            .col-md-3
-              =t('from') + ':'
-            .col-md-9
-              =@entry.from
+              %tr
+                %th= t('from')
+                %td= @entry.from
 
-          .row
-            .col-md-3
-              =t('to') + ':'
-            .col-md-9
-              =@entry.to
+              %tr
+                %th= t('to')
+                %td= @entry.to
 
-          .row
-            .col-md-3
-              =t('seats') + ':'
-            .col-md-9
-              =@entry.seats
+              %tr
+                %th= t('seats')
+                %td= @entry.seats
 
-          - if @entry.is_request?
-            .row
-              .col-md-3
-                =t('person_would_drive')
-              .col-md-9
-                =yes_no(@entry.driver)
+              - if @entry.is_request?
+                %tr
+                  %th= t('person_would_drive')
+                  %td= yes_no(@entry.driver)
 
-          .row
-            .col-md-3
-              =t('notes') + ':'
-            .col-md-9
-              =@entry.notes
+              %tr
+                %th= t('notes')
+                %td= @entry.notes
+
+              - if @entry.is_offer? and not @entry.driver
+                %tr
+                  %th
+                  %td
+                    %span.label.label-info
+                      = t('driver_needed')
 
         .panel-footer
           .form-actions
