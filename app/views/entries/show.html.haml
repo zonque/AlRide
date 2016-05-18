@@ -16,11 +16,12 @@
             .col-md-9
               =@entry.name
 
-          .row
-            .col-md-3
-              =t('phone') + ':'
-            .col-md-9
-              =@entry.phone
+          -unless @entry.phone.blank?
+            .row
+              .col-md-3
+                =t('phone') + ':'
+              .col-md-9
+                =@entry.phone
 
           .row
             .col-md-3
