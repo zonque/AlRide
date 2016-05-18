@@ -42,7 +42,7 @@ If you want to use `sqlite` in your `production` environment, make sure to add `
 
     cp config/settings.template.yml config/settings.local.yml
 
-In particular, make sure to set the secret token for your application in `.env`. `rake secret` will generate one for you.
+In particular, make sure to set the secret token for your application in the settings. `rake secret` will generate one for you.
 
 5) Create and setup the database
 
@@ -81,10 +81,6 @@ The page header on the default welcome screen can be customized by putting Markd
 where `<I18n>` is one of the supported locale variables (`en`, `de`, ...).
 
 If such a files doesn't exist, the configured platform name is shown instead.
-
-## Upgrading
-
-Note that when you're upgrading an existing installation of this project, you need to transfer your configuration from `config/settings.yml` to `.env`.
 
 ## Contribute
 
