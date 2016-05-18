@@ -41,7 +41,6 @@ If you want to use `sqlite` in your `production` environment, make sure to add `
 4) Create and modify settings:
 
     cp config/settings.template.yml config/settings.local.yml
-    cp .env.template .env
 
 In particular, make sure to set the secret token for your application in `.env`. `rake secret` will generate one for you.
 
