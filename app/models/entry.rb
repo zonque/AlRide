@@ -19,6 +19,14 @@ class Entry < ActiveRecord::Base
     end
   end
 
+  def is_request?
+    self.entry_type.to_sym == :request
+  end
+
+  def is_offer?
+    self.entry_type.to_sym == :offer
+  end
+
   before_save :create_secret
   after_save :send_mail
 

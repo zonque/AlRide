@@ -46,7 +46,7 @@
             .col-md-9
               =@entry.seats
 
-          - if @entry.entry_type.to_sym == :request
+          - if @entry.is_request?
             .row
               .col-md-3
                 =t('person_would_drive')

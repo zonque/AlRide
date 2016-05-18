@@ -1,6 +1,6 @@
 Hi <%= @entry.name %>,
 
-<% if @entry.entry_type.to_sym == :request %>
+<% if @entry.is_request? %>
 Vielen Dank für das Einstellen deines Gesuchs!
 <% else %>
 Vielen Dank, dass Du eine MFG anbietest!
@@ -15,7 +15,7 @@ Dein <%= t(@entry.entry_type) %> wurde mit den folgenden Details gespeichert:
   Sonstiges: <%= @entry.notes %>
 
 
-<% if @entry.entry_type.to_sym == :request %>
+<% if @entry.is_request? %>
 Leute, die eine MFG anbieten, können Dich jetzt über unsere Webseite kontaktieren.
 <% else %>
 Leute, die eine MFG suchen, können Dich jetzt über unsere Webseite kontaktieren.

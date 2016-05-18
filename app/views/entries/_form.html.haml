@@ -9,7 +9,7 @@
       =f.input :from
       =f.input :to
       =f.input :seats
-      =f.input :driver, label: (@entry.entry_type.to_sym == :request) ? t('would_you_drive') : t('are_you_driving_youself')
+      =f.input :driver, label: @entry.is_request? ? t('would_you_drive') : t('are_you_driving_youself')
       =f.input :notes, input_html: { rows: 10 }
 
     .panel-footer

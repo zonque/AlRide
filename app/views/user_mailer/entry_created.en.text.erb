@@ -1,6 +1,6 @@
 Hi <%= @entry.name %>,
 
-<% if @entry.entry_type.to_sym == :request %>
+<% if @entry.is_request? %>
 Thanks for letting us know you are looking for a ride!
 <% else %>
 Thanks for sharing your ride!
@@ -15,7 +15,7 @@ Your <%= @entry.entry_type %> has been stored with the following details:
   Notes: <%= @entry.notes %>
 
 
-<% if @entry.entry_type.to_sym == :request %>
+<% if @entry.is_request? %>
 People who have a ride to offer may now contact you through our web site.
 <% else %>
 People looking for a ride may now contact you through our web site.

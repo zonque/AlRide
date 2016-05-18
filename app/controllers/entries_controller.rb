@@ -16,7 +16,7 @@ class EntriesController < ApplicationController
   end
 
   def show
-    if @entry.entry_type.to_sym == :request
+    if @entry.is_request?
       @title = t('name_is_looking_for_a_ride', name: @entry.name)
     else
       @title = t('name_has_a_ride_to_share', name: @entry.name)
@@ -28,7 +28,7 @@ class EntriesController < ApplicationController
     @entry.entry_type = params[:entry_type]
     @entry.seats = 1
 
-    if @entry.entry_type.to_sym == :offer
+    if @entry.is_offer?
       @entry.driver = true
     end
 
