@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery_stickytabs
 //= require bootstrap-sprockets
 //= require bootstrap-datetimepicker.min

@@ -12,18 +12,20 @@
 
 .row
   .col-md-12
-    %div{ role: "tabpanel" }
-      %ul.nav.nav-tabs.nav-justified
-        %li.active{ role: "presentation" }
-          = link_to "#offers", 'aria-controls': 'offers', role: 'tab', 'data-toggle': 'tab' do
-            =t('people_who_have_a_ride')
-            %span.badge= @offers.length
-        %li{ role: "presentation" }
-          =link_to "#requests", 'aria-controls': 'requests', role: 'tab', 'data-toggle': 'tab' do
-            =t('people_who_need_a_ride')
-            %span.badge= @requests.length
-      .tab-content
-        .tab-pane.active{ role: "tabpanel", id: "offers" }
-          =render 'entries/list', entries: @offers
-        .tab-pane{ role: "tabpanel", id: "requests" }
-          =render 'entries/list', entries: @requests
+    %ul.nav.nav-tabs.nav-tabs-sticky.nav-justified{ role: 'tablist' }
+      %li.active{ role: 'presentation' }
+        =link_to "#offers", 'aria-controls': 'offers', role: 'tab', 'data-toggle': 'tab' do
+          =t('people_who_have_a_ride')
+          %span.badge= @offers.length
+      %li{ role: 'presentation' }
+        =link_to "#requests", 'aria-controls': 'requests', role: 'tab', 'data-toggle': 'tab' do
+          =t('people_who_need_a_ride')
+          %span.badge= @requests.length
+    .tab-content
+      .tab-pane.active{ role: 'tabpanel', id: 'offers' }
+        =render 'entries/list', entries: @offers
+      .tab-pane{ role: 'tabpanel', id: 'requests' }
+        =render 'entries/list', entries: @requests
+
+:javascript
+  $('.nav-tabs-sticky').stickyTabs();
