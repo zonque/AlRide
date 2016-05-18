@@ -61,7 +61,7 @@
 
         .panel-footer
           .form-actions
-            =link_to root_path, class: 'btn btn-default btn-primary', role: 'button' do
+            =link_to root_path(anchor: @entry.entry_type.pluralize), class: 'btn btn-default btn-primary', role: 'button' do
               %span.glyphicon.glyphicon-arrow-left
               =t('back')
 
