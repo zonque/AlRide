@@ -74,7 +74,7 @@ class EntriesController < ApplicationController
   end
 
   def entry_params
-    params.require(:entry).permit(:entry_type, :name, :email, :phone, :date, :from, :to, :seats, :notes)
+    params.require(:entry).permit(:entry_type, :name, :email, :phone, :date, :from, :to, :seats, :notes, :driver)
   end
 
 end

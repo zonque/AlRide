@@ -28,7 +28,7 @@ class Entry < ActiveRecord::Base
   end
 
   before_save :create_secret
-  after_save :send_mail
+  after_create :send_mail
 
   private
 
