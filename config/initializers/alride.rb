@@ -13,5 +13,5 @@ if ENV['MAILGUN_SMTP_SERVER']
   ActionMailer::Base.delivery_method = :smtp
 else
   ActionMailer::Base.delivery_method = Settings.mail.delivery_method.to_sym
-  ActionMailer::Base.smtp_settings = Settings.mail.smtp_settings.to_hash
+  ActionMailer::Base.smtp_settings = Settings.mail.smtp_settings.to_hash rescue {}
 end

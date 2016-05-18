@@ -43,7 +43,7 @@ class EntriesController < ApplicationController
     if @entry.save
       redirect_to root_path, notice: t('entry_was_successfully_created')
     else
-      render action: 'new'
+      render :new
     end
   end
 
@@ -63,14 +63,14 @@ class EntriesController < ApplicationController
   end
 
   def send_email
-    UserMailer.contact_entry_person(@entry, params[:from], params[:text], params[:would_drive]).deliver
+    UserMailer.contact_entry_person(@entry, params[:from], params[:text], params[:would_drive]).deliver_now
     redirect_to root_path, flash: { success: t('mail_has_been_sent') }
   end
 
   private
 
   def find_entry
-    @entry = Entry.find(params[:id] || params[:entry_id])
+    @entry = Entry.find(params[:id] || params[:entry_id]) rescue nil
   end
 
   def entry_params

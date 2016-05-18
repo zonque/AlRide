@@ -22,6 +22,15 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :development, :test do
+  gem 'byebug'
+  gem 'capybara'
+  gem 'factory_girl_rails', '~> 4.0'
+  gem 'railroady'
+  gem 'rspec-rails'
+  gem 'simplecov', require: false
+end
+
 group :development do
   # Use sqlite3 as the database for Active Record
   gem 'brakeman'

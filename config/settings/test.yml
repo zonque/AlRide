@@ -1,0 +1,11 @@
+platform_name: AlRide test
+mail:
+  from: alride@example.com
+
+  default_url_options:
+    host: example.com
+    port: 80
+    protocol: http
+
+  smtp_settings:
+  delivery_method: test

@@ -7,6 +7,8 @@ en:
   show_details: "Show details"
   cancel: "Cancel"
   back: "Back"
+  details: "Details"
+  contact: "Contact"
   create_entry: "Create entry"
   send_email: "Send email"
 

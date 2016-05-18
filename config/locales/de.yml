@@ -7,8 +7,9 @@ de:
   show_details: "Details anzeigen"
   cancel: "Abbrechen"
   back: "Zurück"
-  create_entry: "Eintrag anlegen"
+  details: "Details"
   contact: "Kontakt"
+  create_entry: "Eintrag anlegen"
   send_email: "Email abschicken"
 
   bool_yes: "Ja"
