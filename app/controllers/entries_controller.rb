@@ -1,5 +1,5 @@
 class EntriesController < ApplicationController
-  before_action :set_entry, only: [:show]
+  before_action :find_entry, only: [ :show, :remove, :send_email ]
 
   def index
     limit = Time.now - 3.hours
@@ -15,8 +15,6 @@ class EntriesController < ApplicationController
     end
   end
 
-  # GET /entries/1
-  # GET /entries/1.json
   def show
     if @entry.entry_type.to_sym == :request
       @title = t('name_is_looking_for_a_ride', name: @entry.name)
@@ -25,40 +23,31 @@ class EntriesController < ApplicationController
     end
   end
 
-  # GET /entries/new
   def new
     @entry = Entry.new
     @entry.entry_type = params[:entry_type]
     @entry.seats = 1
 
     if @entry.entry_type.to_sym == :offer
-        @entry.driver = true
+      @entry.driver = true
     end
 
     @title = "New #{@entry.entry_type}"
   end
 
-  # POST /entries
-  # POST /entries.json
   def create
     @entry = Entry.new(entry_params)
     @entry.locale = I18n.locale
     @title = "New #{@entry.entry_type}"
 
-    respond_to do |format|
-      if @entry.save
-        format.html { redirect_to root_path, notice: t('entry_was_successfully_created') }
-        format.json { render action: 'show', status: :created, location: @entry }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @entry.errors, status: :unprocessable_entity }
-      end
+    if @entry.save
+      redirect_to root_path, notice: t('entry_was_successfully_created')
+    else
+      render action: 'new'
     end
   end
 
   def remove
-    @entry = Entry.find_by_id(params[:entry_id])
-
     if @entry.nil?
       redirect_to root_path, flash: { error: t('entry_does_not_exist') }
       return
@@ -74,20 +63,18 @@ class EntriesController < ApplicationController
   end
 
   def send_email
-    @entry = Entry.find(params[:entry_id])
     UserMailer.contact_entry_person(@entry, params[:from], params[:text], params[:would_drive]).deliver
     redirect_to root_path, flash: { success: t('mail_has_been_sent') }
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_entry
-      @entry = Entry.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def entry_params
-      params.require(:entry).permit(:entry_type, :name, :email, :phone, :date, :from, :to, :seats, :notes)
-    end
+  def find_entry
+    @entry = Entry.find(params[:id] || params[:entry_id])
+  end
+
+  def entry_params
+    params.require(:entry).permit(:entry_type, :name, :email, :phone, :date, :from, :to, :seats, :notes)
+  end
 
 end

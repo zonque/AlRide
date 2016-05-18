@@ -6,7 +6,7 @@ namespace :AlRide do
       UserMailer.delivery_method = :test
 
       100.times do
-        e = Entry.create(entry_type: %w(offer request).shuffle.first,
+        e = Entry.create(entry_type: Entry::TYPES.shuffle.first,
                          name: Faker::Name.name,
                          email: Faker::Internet.email,
                          phone: Faker::PhoneNumber.cell_phone,

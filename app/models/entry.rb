@@ -1,6 +1,5 @@
 class Entry < ActiveRecord::Base
-
-  EMAIL_REGEXP = /\A[^@]+@([^@\.]+\.)+[^@\.]+\z/
+  TYPES = %w(offer request)
 
   validates_presence_of :name
   validates_presence_of :email
@@ -10,12 +9,13 @@ class Entry < ActiveRecord::Base
   validates_presence_of :to
 
   validates_numericality_of :seats
-  validates_format_of :email, with: EMAIL_REGEXP
+  validates_inclusion_of :entry_type, in: TYPES
+  validates_format_of :email, with: /\A.+@.+\z/
   validate :date_after_now
 
   def date_after_now
-    if self.date
-      self.errors.add(:date, "should not be in the past") if self.date < Time.now
+    if self.date and self.date < Time.now
+      self.errors.add(:date, "should not be in the past")
     end
   end
 
@@ -29,7 +29,7 @@ class Entry < ActiveRecord::Base
   end
 
   def send_mail
-    UserMailer.entry_created(self).deliver
+    UserMailer.entry_created(self).deliver_now
   end
 
 end
