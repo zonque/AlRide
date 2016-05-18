@@ -73,8 +73,8 @@
 
           .panel-body
             .form-group
-              =label_tag t('your_email'), nil, class: 'control-label'
-              =text_field_tag :from, nil, class: 'form-control', placeholder: t("your_email_address")
+              =label_tag t("simple_form.labels.entry.email"), nil, class: 'control-label'
+              =text_field_tag :from, nil, class: 'form-control'
 
             - if @entry.entry_type.to_sym == :offer
               .form-group

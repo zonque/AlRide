@@ -23,7 +23,7 @@ de:
   your_start_point: "Dein Startpunkt"
   your_destination: "Dein Ziel"
   to_contact_text: "Um %{name} zu kontaktieren, trage bitte eine Emailadresse und Deine Nachricht ein."
-  please_complete_the_form: "Bitte trage die Details in das Formular ein. Deine Emailadresse wird nicht weitergegeben. Die Telefonnummer ist optional und für jeden sichtbar."
+  please_complete_the_form: "Bitte trage die Details in das Formular ein."
   your_message: "Deine Nachricht"
 
   your_offer_has_been_created: "Dein Angebot wurde gespeichert"
@@ -50,7 +50,31 @@ de:
   would_you_drive: "Würdest Du Dich als Fahrer anbieten?"
   driver_needed: "Für diese Fahrt wird noch ein Fahrer benötigt"
   person_would_drive: "Würde sich diese Person anbieten, das Auto zu fahren?"
-  notes: "Sonstiges"
+  notes: "Sonstige Angaben"
 
   offer: "Angebot"
   request: "Gesuch"
+
+  simple_form:
+    yes: 'Ja'
+    no: 'Nein'
+    required:
+      text: 'Pflichtfeld'
+      mark: '*'
+
+    labels:
+      entry:
+        name: "Dein Name"
+        email: "Deine Emailadresse"
+        phone_number: "Deine Telefonnummer"
+        date: "Datum und Uhrzeit"
+        from: "Dein Startpunkt"
+        to: "Dein Ziel"
+        seats: "Sitzplätze"
+        notes: "Weitere Angaben"
+
+    hints:
+      entry:
+        name: "Dein Name, wo wie er auf der auf der Webseite angezeigt werden soll."
+        email: "Die Emailadresse wird nicht weitergegeben oder angezeigt. Wir senden eine Mail an diese Adresse, wenn jemand mit Dir Kontakt aufnehmen möchte."
+        phone: "Die Telefonnummer wird für jeden öffentlich sichtbar angezeigt. Diese Angabe ist optional."

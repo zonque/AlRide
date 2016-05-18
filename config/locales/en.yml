@@ -15,15 +15,8 @@ en:
   bool_yes: "Yes"
   bool_no: "No"
 
-  your_name: "Your name"
-  your_email: "Your email"
-  your_email_address: "your@email-address.org"
-  your_phone_number: "Your phone number"
-  date_and_time: "Date and time"
-  your_start_point: "Your start point"
-  your_destination: "Your destination"
   to_contact_text: "To contact %{name}, please enter your mail address and your text below."
-  please_complete_the_form: "Please complete the form below. Your email address will not be visible by anyone. A phone number is optional and will be shown to others."
+  please_complete_the_form: "Please complete the form below."
   your_message: "Your message"
 
   your_offer_has_been_created: "Your offer has been recorded"
@@ -49,7 +42,7 @@ en:
   are_you_driving_youself: "Are you willing and able to drive the car yourself?"
   would_you_drive: "Would you offer to drive the car as well?"
   person_would_drive: "Would this person also drive the car?"
-  notes: "Notes"
+  notes: "Additional notes"
 
   offer: "offer"
   request: "request"
@@ -57,3 +50,27 @@ en:
   time:
     formats:
       long: "%a, %B %d, %Y, %H:%M"
+
+  simple_form:
+    yes: 'Ja'
+    no: 'Nein'
+    required:
+      text: 'Pflichtfeld'
+      mark: '*'
+
+    labels:
+      entry:
+        name: "Your name"
+        email: "Your email address"
+        phone_number: "Your phone number"
+        date: "Date and time"
+        from: "Your start point"
+        to: "Your destination"
+        seats: "Number of seats"
+        notes: "Additional notes"
+
+    hints:
+      entry:
+        name: "Your name, as is will be shown on the web site."
+        email: "Your email address will not be visible to anyone. We'll use it to send you an email once somebody wants to contact your."
+        phone: "A phone number is optional and will be shown to others."

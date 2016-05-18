@@ -1,42 +1,16 @@
-= form_for @entry do |f|
+= simple_form_for @entry do |f|
   .panel.panel-default
     .panel-body
       = f.hidden_field :entry_type
-      .form-group
-        = f.label :name, class: 'control-label'
-        = f.text_field :name, class: 'form-control', placeholder: t('your_name')
-
-      .form-group
-        = f.label :email, class: 'control-label'
-        = f.text_field :email, class: 'form-control', placeholder: t('your_email_address')
-
-      .form-group
-        = f.label :phone, class: 'control-label'
-        = f.text_field :phone, class: 'form-control', placeholder: t('your_phone_number')
-
-      .form-group
-        = f.label :date, class: 'control-label'
-        = f.text_field :date, class: 'form-control', data: { date_format: 'YYYY/MM/DD' }, placeholder: t('date_and_time')
-
-      .form-group
-        = f.label :from, class: 'control-label'
-        = f.text_field :from, class: 'form-control', placeholder: t('your_start_point')
-
-      .form-group
-        = f.label :to, class: 'control-label'
-        = f.text_field :to, class: 'form-control', placeholder: t('your_destination')
-
-      .form-group
-        = f.label :seats, class: 'control-label'
-        = f.text_field :seats, class: 'form-control'
-
-      .form-group
-        = f.label @entry.entry_type.to_sym == :offer ? t('are_you_driving_youself') : t('would_you_drive'), class: 'control-label'
-        = f.check_box :driver, class: 'check_box'
-
-      .form-group
-        = f.label :notes, class: 'control-label'
-        = f.text_area :notes, class: 'form-control'
+      =f.input :name
+      =f.input :email
+      =f.input :phone
+      =f.input :date, as: :string
+      =f.input :from
+      =f.input :to
+      =f.input :seats
+      =f.input :driver, label: (@entry.entry_type.to_sym == :request) ? t('would_you_drive') : t('are_you_driving_youself')
+      =f.input :notes, input_html: { rows: 10 }
 
     .panel-footer
       .form-actions
