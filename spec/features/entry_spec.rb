@@ -35,7 +35,7 @@ feature 'Requests', type: :feature do
         expect(last_email.from).to eq([Settings.mail.from])
 
         # use the link in the mail to delete the entry
-        path_regex = /(https?\:\/\/.*?)(\/.*?)\n/
+        path_regex = /(https?\:\/\/.*?)(\/.*remove.*?)\n/
         path = last_email.body.match(path_regex)[2]
         expect(path).to_not be_empty
         visit(path)

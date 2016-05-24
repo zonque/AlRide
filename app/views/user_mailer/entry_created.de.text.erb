@@ -1,7 +1,7 @@
 Hi <%= @entry.name %>,
 
 <% if @entry.is_request? %>
-Vielen Dank für das Einstellen deines Gesuchs!
+Vielen Dank für das Einstellen Deines Gesuchs!
 <% else %>
 Vielen Dank, dass Du eine MFG anbietest!
 <% end %>
@@ -14,6 +14,7 @@ Dein <%= t(@entry.entry_type) %> wurde mit den folgenden Details gespeichert:
   Anzahl an Sitzplätzen: <%= @entry.seats %>
   Sonstiges: <%= @entry.notes %>
 
+  <%= entry_url(@entry) %>
 
 <% if @entry.is_request? %>
 Leute, die eine MFG anbieten, können Dich jetzt über unsere Webseite kontaktieren.
@@ -24,4 +25,3 @@ Leute, die eine MFG suchen, können Dich jetzt über unsere Webseite kontaktiere
 Wenn Dein Eintrag nicht mehr aktuell ist und entfernt werden sollte, klicke bitte auf den folgenden Link.
 
 <%= entry_remove_url(@entry, secret: @entry.secret, locale: I18n.locale) %>
-

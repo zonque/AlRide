@@ -11,7 +11,10 @@ Hallo <%= @entry.name %>,
 
 --------------------------
 
+Dein Eintrag ist unter dem folgenden Link zu sehen:
+
+  <%= entry_url(@entry) %>
+
 Wenn Dein Eintrag nicht mehr aktuell ist und entfernt werden sollte, klicke bitte auf den folgenden Link.
 
 <%= entry_remove_url(@entry, secret: @entry.secret, locale: I18n.locale) %>
-

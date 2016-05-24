@@ -11,7 +11,10 @@ Hi <%= @entry.name %>,
 
 --------------------------
 
+Your entry can be seen under the following link:
+
+  <%= entry_url(@entry) %>
+
 If your entry should be removed from our database because it is outdated or no longer neccessary, please click on the following link.
 
 <%= entry_remove_url(@entry, secret: @entry.secret, locale: I18n.locale) %>
-
