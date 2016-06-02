@@ -13,3 +13,6 @@
 #
 #   smtp_settings:
 #     address: localhost
+#
+# ui:
+#   hide_project_link: true

@@ -33,7 +33,8 @@
           - if I18n.locale != :de
             =link_to "Deutsche Version", url_for(locale: :de)
 
-      .row
-        .col-md-12
-          %small
-            =link_to "GitHub project", "https://github.com/zonque/AlRide"
+      -unless Settings.ui and Settings.ui.hide_project_link == false
+        .row
+          .col-md-12
+            %small
+              =link_to "GitHub project", "https://github.com/zonque/AlRide"
