@@ -12,6 +12,7 @@ class Entry < ActiveRecord::Base
   validates_inclusion_of :entry_type, in: TYPES
   validates_format_of :email, with: /\A.+@.+\z/
   validate :date_after_now
+  validate :does_not_contain_blacklisted_words
 
   def date_after_now
     if self.date and self.date < Time.now
@@ -38,6 +39,24 @@ class Entry < ActiveRecord::Base
 
   def send_mail
     UserMailer.entry_created(self).deliver_now
+  end
+
+  def does_not_contain_blacklisted_words
+    words = Settings.content.blacklisted_words.downcase rescue ""
+
+    words.split(" ").each do |w|
+      if self.from.downcase.match(w)
+        errors.add(:from, "Cannot contain the word '#{w}'")
+      end
+
+      if self.to.downcase.match(w)
+        errors.add(:to, "Cannot contain the word '#{w}'")
+      end
+
+      if self.notes.downcase.match(w)
+        errors.add(:notes, "Cannot contain the word '#{w}'")
+      end
+    end
   end
 
 end

@@ -16,3 +16,6 @@
 #
 # ui:
 #   hide_project_link: true
+#
+# content:
+#   blacklisted_words: %()
