@@ -42,19 +42,14 @@ class Entry < ActiveRecord::Base
   end
 
   def does_not_contain_blacklisted_words
-    words = Settings.content.blacklisted_words.downcase rescue ""
+    words = Settings.content.blacklist.words.downcase rescue ""
 
     words.split(" ").each do |w|
-      if self.from.downcase.match(w)
-        errors.add(:from, "Cannot contain the word '#{w}'")
-      end
-
-      if self.to.downcase.match(w)
-        errors.add(:to, "Cannot contain the word '#{w}'")
-      end
-
-      if self.notes.downcase.match(w)
-        errors.add(:notes, "Cannot contain the word '#{w}'")
+      [ :to, :from, :notes ].each do |field|
+        if self[field].downcase.match(w)
+          msg = Settings.content.blacklist.message[I18n.locale] % { word: w } rescue "Cannot contain the word '#{w}'"
+          errors.add(field, msg)
+        end
       end
     end
   end
