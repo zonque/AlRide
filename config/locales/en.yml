@@ -42,7 +42,7 @@ en:
   are_you_driving_youself: "Are you willing and able to drive the car yourself?"
   would_you_drive: "Would you offer to drive the car as well?"
   driver_needed: "This ride is still in need of a driver!"
-  person_would_drive: "Would this person also drive the car?"
+  person_would_drive: "%{name} would also offer to drive the car."
   notes: "Additional notes"
 
   offer: "offer"

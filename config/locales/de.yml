@@ -49,7 +49,7 @@ de:
   are_you_driving_youself: "Fährst Du Dein Auto selbst?"
   would_you_drive: "Würdest Du Dich als Fahrer anbieten?"
   driver_needed: "Für diese Fahrt wird noch ein:e Fahrer:in benötigt!"
-  person_would_drive: "Würde sich diese Person anbieten, das Auto zu fahren?"
+  person_would_drive: "Freundlicherweise würde %{name} sich anbieten, das Auto zu fahren."
   notes: "Sonstige Angaben"
 
   offer: "Angebot"

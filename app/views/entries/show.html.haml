@@ -37,21 +37,19 @@
                 %th= t('seats')
                 %td= @entry.seats
 
-              - if @entry.is_request?
-                %tr
-                  %th= t('person_would_drive')
-                  %td= yes_no(@entry.driver)
+            %tr
+              %th= t('notes')
+              %td= @entry.notes
 
-              %tr
-                %th= t('notes')
-                %td= @entry.notes
+          - if @entry.is_request? and @entry.driver
+            .well
+              %span.glyphicon.glyphicon-ok-circle
+              = t('person_would_drive', name: @entry.name)
 
-              - if @entry.is_offer? and not @entry.driver
-                %tr
-                  %th
-                  %td
-                    %span.label.label-info
-                      = t('driver_needed')
+          - if @entry.is_offer? and not @entry.driver
+            .well
+              %span.glyphicon.glyphicon-exclamation-sign
+              = t('driver_needed')
 
         .panel-footer
           .form-actions
