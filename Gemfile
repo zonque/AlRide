@@ -1,16 +1,16 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 4.2.0'
+gem 'rails', '~> 5.2.0'
 
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap-sass'
 gem 'coffee-rails'
 gem 'config'
 gem 'faker'
 gem 'haml-rails'
-gem 'jbuilder', '~> 2.0'
+gem 'jbuilder'
 gem 'jquery-rails'
 gem 'pry-rails'
-gem 'rails-i18n', '~> 4.0.0'
+gem 'rails-i18n', '~> 5.0.0'
 gem 'redcarpet'
 gem 'sass-rails', '~> 5.0.0'
 gem 'therubyracer', platforms: :ruby
@@ -26,7 +26,7 @@ end
 group :development, :test do
   gem 'byebug'
   gem 'capybara'
-  gem 'factory_girl_rails', '~> 4.0'
+  gem 'factory_girl_rails'
   gem 'railroady'
   gem 'rspec-rails'
   gem 'simplecov', require: false
