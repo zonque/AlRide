@@ -30,7 +30,7 @@ group :development, :test do
   gem 'railroady'
   gem 'rspec-rails'
   gem 'simplecov', require: false
-  gem 'sqlite3'
+  gem 'sqlite3', '~> 1.3.6'
 end
 
 group :development do
