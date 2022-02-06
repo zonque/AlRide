@@ -7,7 +7,7 @@ feature 'Requests', type: :feature do
   scenario "user submits a new entry" do
     Entry::TYPES.each do |entry_type|
       for_each_locale do
-        entry = FactoryGirl.build(:entry)
+        entry = FactoryBot.build(:entry)
         entry.entry_type = entry_type
         reset_email
 
@@ -48,7 +48,7 @@ feature 'Requests', type: :feature do
   scenario "User replies to an entry" do
     Entry::TYPES.each do |entry_type|
       for_each_locale do
-        entry = FactoryGirl.create(:entry)
+        entry = FactoryBot.create(:entry)
         entry.update_attribute(:entry_type, entry_type)
         visit entry_path(entry)
         reset_email
@@ -73,7 +73,7 @@ feature 'Requests', type: :feature do
   scenario "remove links" do
     Entry::TYPES.each do |entry_type|
       for_each_locale do
-        entry = FactoryGirl.create(:entry)
+        entry = FactoryBot.create(:entry)
         entry.update_attribute(:entry_type, entry_type)
 
         # bogus ID

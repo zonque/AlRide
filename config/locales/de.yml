@@ -55,6 +55,10 @@ de:
   offer: "Angebot"
   request: "Gesuch"
 
+  time:
+    formats:
+      long: "%a, %B %d, %Y, %H:%M"
+
   simple_form:
     yes: 'Ja'
     no: 'Nein'

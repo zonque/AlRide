@@ -1,32 +1,32 @@
 RSpec.configure do |config|
-  config.include FactoryGirl::Syntax::Methods
+  config.include FactoryBot::Syntax::Methods
 end
 
 # Test::Unit
 class Test::Unit::TestCase
-  include FactoryGirl::Syntax::Methods
+  include FactoryBot::Syntax::Methods
 end
 
 # Cucumber
-World(FactoryGirl::Syntax::Methods)
+World(FactoryBot::Syntax::Methods)
 
 # Spinach
 class Spinach::FeatureSteps
-  include FactoryGirl::Syntax::Methods
+  include FactoryBot::Syntax::Methods
 end
 
 # MiniTest
 class MiniTest::Unit::TestCase
-  include FactoryGirl::Syntax::Methods
+  include FactoryBot::Syntax::Methods
 end
 
 # MiniTest::Spec
 class MiniTest::Spec
-  include FactoryGirl::Syntax::Methods
+  include FactoryBot::Syntax::Methods
 end
 
 # minitest-rails
 class MiniTest::Rails::ActiveSupport::TestCase
-  include FactoryGirl::Syntax::Methods
+  include FactoryBot::Syntax::Methods
 end
 

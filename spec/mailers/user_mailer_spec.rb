@@ -6,7 +6,7 @@ RSpec.describe UserMailer, type: :mailer do
   describe "entry_created" do
     it "delivers to the right recipient" do
       for_each_locale do
-        entry = FactoryGirl.create(:entry)
+        entry = FactoryBot.create(:entry)
         mail = UserMailer.entry_created(entry)
 
         expect(mail.to).to eq([entry.email])
@@ -18,7 +18,7 @@ RSpec.describe UserMailer, type: :mailer do
   describe "contact_entry_person" do
     it "delivers to the right recipient" do
       for_each_locale do
-        entry = FactoryGirl.create(:entry)
+        entry = FactoryBot.create(:entry)
         mail = UserMailer.contact_entry_person(entry, "", "", false)
 
         expect(mail.to).to eq([entry.email])
