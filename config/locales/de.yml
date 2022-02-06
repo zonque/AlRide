@@ -59,6 +59,11 @@ de:
     formats:
       long: "%a, %B %d, %Y, %H:%M"
 
+  date:
+    abbr_day_names: [ "Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"]
+    month_names: [ "Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"]
+    abbr_month_names: [ "Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"]
+
   simple_form:
     yes: 'Ja'
     no: 'Nein'
