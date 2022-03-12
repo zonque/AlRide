@@ -54,11 +54,11 @@ In particular, make sure to set the secret token for your application in the set
 
 7) Start the server
 
-To start frab in the development environment simply run
+To start AlRide in the development environment simply run
 
     bundle exec rails server
 
-To start frab in the production environment make sure you
+To start AlRide in the production environment make sure you
 did not skip step 6 and run:
 
     rails server -e production
