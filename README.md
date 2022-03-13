@@ -40,7 +40,7 @@ If you want to use `sqlite` in your `production` environment, make sure to add `
 
 4) Create and modify settings:
 
-    cp config/settings.template.yml config/settings.local.yml
+    cp config/settings/template.yml config/settings.local.yml
 
 In particular, make sure to set the secret token for your application in the settings. `rake secret` will generate one for you.
 
@@ -66,6 +66,12 @@ did not skip step 6 and run:
 (Note that for a "real" production environment you should really use something like unicorn or passenger.)
 
 Navigate to http://localhost:3000/ to use AlRide.
+
+### Configuration through environment variables
+
+Environment variables can be used to override settings passed in YAML files such as `config/settings.local.yml`.
+Keys must be prefixed with `ALRIDE` and the nesting separator is `__`. So for example, in order to set the platform name,
+you would set the environment variable `ALRIDE__platform_name` prior to starting the application server.
 
 ### Heroku
 
