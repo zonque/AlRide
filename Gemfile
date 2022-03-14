@@ -53,6 +53,7 @@ gem 'simple_form'
 gem 'config'
 gem 'faker'
 gem 'pry-rails'
+gem 'redcarpet'
 
 gem "haml"
 
