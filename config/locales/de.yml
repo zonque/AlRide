@@ -55,6 +55,9 @@ de:
   offer: "Angebot"
   request: "Gesuch"
 
+  new_offer: "Neues Angebot"
+  new_request: "Neues Gesuch"
+
   time:
     formats:
       long: "%a, %B %d, %Y, %H:%M"

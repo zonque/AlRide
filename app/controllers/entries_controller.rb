@@ -32,13 +32,13 @@ class EntriesController < ApplicationController
       @entry.driver = true
     end
 
-    @title = "New #{@entry.entry_type}"
+    @title = t("new_#{@entry.entry_type}")
   end
 
   def create
     @entry = Entry.new(entry_params)
     @entry.locale = I18n.locale
-    @title = "New #{@entry.entry_type}"
+    @title = t("new_#{@entry.entry_type}")
 
     if @entry.save
       redirect_to root_path, notice: t('entry_was_successfully_created')

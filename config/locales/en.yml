@@ -48,6 +48,9 @@ en:
   offer: "offer"
   request: "request"
 
+  new_offer: "New ride offer"
+  new_request: "New ride request"
+
   time:
     formats:
       long: "%a, %B %d, %Y, %H:%M"
