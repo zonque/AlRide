@@ -19,49 +19,65 @@ Built with Rails 4.2, Bootstrap and HAML.
 
 ### Self-hosting
 
-AlRide is a standard Rails 4 application. You can pretty much follow any of the available install guides, or follow the one below.
+AlRide is a standard Rails 7 application. You can pretty much follow any of the available install guides, or follow the one below.
 
-Basically, to get started you need git, ruby (>= 2.0) and the bundler gem, then follow these steps.
+Basically, to get started you need git, ruby (>= 3.0) and the bundler gem, then follow these steps.
 
 1) Clone the repository
 
+```
     git clone git://github.com/zonque/AlRide.git
+```
 
 2) cd into the directory
 
+```
     cd AlRide
+```
 
 3) Install all necessary gems:
 
+```
     bundle install
+```
 
 If you want to use `sqlite` in your `production` environment, make sure to add `gem 'sqlite'` to the `production` group of
 `Gemfile` before running the `bundle` command.
 
 4) Create and modify settings:
 
+```
     cp config/settings/template.yml config/settings.local.yml
+```
 
 In particular, make sure to set the secret token for your application in the settings. `rake secret` will generate one for you.
 
 5) Create and setup the database
 
+```
     rake db:setup
+```
 
 6) Precompile assets (only needed for production)
 
+```
     rake assets:precompile
+```
 
 7) Start the server
 
 To start AlRide in the development environment simply run
 
+```
     bundle exec rails server
+```
 
 To start AlRide in the production environment make sure you
 did not skip step 6 and run:
 
+```
     rails server -e production
+```
 
 (Note that for a "real" production environment you should really use something like unicorn or passenger.)
 
