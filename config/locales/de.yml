@@ -47,7 +47,7 @@ de:
   to: "Nach"
   seats: "Sitzplätze"
   are_you_driving_youself: "Fährst Du Dein Auto selbst?"
-  would_you_drive: "Würdest Du Dich als Fahrer anbieten?"
+  would_you_drive: "Würdest Du Dich als Fahrer:in anbieten?"
   driver_needed: "Für diese Fahrt wird noch ein:e Fahrer:in benötigt!"
   person_would_drive: "Freundlicherweise würde %{name} sich anbieten, das Auto zu fahren."
   notes: "Sonstige Angaben"
@@ -60,7 +60,7 @@ de:
 
   time:
     formats:
-      long: "%a, %B %d, %Y, %H:%M"
+      long: "%a, %d. %B %Y, %H:%M"
 
   date:
     abbr_day_names: [ "So", "Mo", "Di", "Mi", "Do", "Fr", "Sa" ]

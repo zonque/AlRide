@@ -17,11 +17,11 @@ Dein <%= t(@entry.entry_type) %> wurde mit den folgenden Details gespeichert:
   <%= entry_url(@entry) %>
 
 <% if @entry.is_request? %>
-Leute, die eine MFG anbieten, können Dich jetzt über unsere Webseite kontaktieren.
+Menschen, die eine MFG anbieten, können Dich jetzt über unsere Webseite kontaktieren.
 <% else %>
-Leute, die eine MFG suchen, können Dich jetzt über unsere Webseite kontaktieren.
+Menschen, die eine MFG suchen, können Dich jetzt über unsere Webseite kontaktieren.
 <% end %>
 
-Wenn Dein Eintrag nicht mehr aktuell ist und entfernt werden sollte, klicke bitte auf den folgenden Link.
+Wenn Du Deinen Eintrag entfernen willst, klicke bitte auf den folgenden Link.
 
 <%= entry_remove_url(@entry, secret: @entry.secret, locale: I18n.locale) %>
