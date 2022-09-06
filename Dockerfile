@@ -1,4 +1,4 @@
-FROM ruby:3.0.2
+FROM ruby:3.1.2
 
 ARG ALRIDE_UID="1000"
 
@@ -10,7 +10,7 @@ RUN chown -R alride:alride /home/alride/app
 USER alride
 WORKDIR /home/alride/app
 
-RUN gem install bundler:2.3.6
+RUN gem install bundler:2.3.21
 RUN bundle install
 
 VOLUME /home/alride/app/public

@@ -10,21 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2016_01_27_185205) do
-
+ActiveRecord::Schema[7.0].define(version: 2016_01_27_185205) do
   create_table "entries", force: :cascade do |t|
     t.string "entry_type"
     t.string "name"
     t.string "email"
     t.string "phone"
-    t.datetime "date", precision: 6
+    t.datetime "date"
     t.string "from"
     t.string "to"
     t.integer "seats"
     t.text "notes"
     t.string "secret"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "locale", default: "en"
     t.boolean "driver"
   end
