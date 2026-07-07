@@ -1,5 +1,9 @@
 [![Build Status](https://travis-ci.org/zonque/AlRide.svg?branch=master)](https://travis-ci.org/zonque/AlRide)
 
+# DEPRECATION NOTICE
+
+This project is superseded by [HopHub](https://github.com/HopHubProject/HopHub) and no longer maintained.
+
 # AlRide - simple ride sharing platform
 
 AlRide is a ride sharing platform that is as simple as is gets.
